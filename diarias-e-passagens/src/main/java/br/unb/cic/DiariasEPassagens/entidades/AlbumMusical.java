@@ -1,9 +1,14 @@
-package br.unb.cic.DiariasEPassagens.negocio;
+package br.unb.cic.DiariasEPassagens.entidades;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
+
+import br.unb.cic.DiariasEPassagens.negocio.Avaliacao;
+import br.unb.cic.DiariasEPassagens.negocio.FaixaMusical;
+import br.unb.cic.DiariasEPassagens.negocio.Genero;
+import br.unb.cic.DiariasEPassagens.negocio.TrabalhoArtistico;
 
 @Entity
 @AttributeOverrides({
