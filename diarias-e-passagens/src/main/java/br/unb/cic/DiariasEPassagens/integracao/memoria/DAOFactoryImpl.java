@@ -10,7 +10,7 @@ import br.unb.cic.DiariasEPassagens.integracao.DAOTrabalhoArtistico;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
 import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOAlbumMusicalJPA;
 import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOAutorJPA;
-import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOFaixaMusicalJPA;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOOrgaoSubordinadoJPA;
 import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOTrabalhoArtisticoJPA;
 import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOUsuarioJPA;
 

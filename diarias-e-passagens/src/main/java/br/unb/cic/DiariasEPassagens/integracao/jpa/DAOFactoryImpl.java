@@ -34,7 +34,7 @@ public class DAOFactoryImpl extends DAOFactory {
 
 	@Override
 	public DAOFaixaMusical createDAOFaixaMusical() {
-		return new DAOFaixaMusicalJPA();
+		return new DAOOrgaoSubordinadoJPA();
 	}
 
 	@Override
