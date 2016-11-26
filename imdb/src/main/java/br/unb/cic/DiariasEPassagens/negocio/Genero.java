@@ -1,4 +1,4 @@
-package br.unb.cic.imdb.negocio;
+package br.unb.cic.DiariasEPassagens.negocio;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

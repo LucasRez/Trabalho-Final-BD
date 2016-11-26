@@ -1,4 +1,4 @@
-package br.unb.cic.imdb.negocio;
+package br.unb.cic.DiariasEPassagens.negocio;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import br.unb.cic.imdb.negocio.*;
+import br.unb.cic.DiariasEPassagens.negocio.*;
 @Entity
 public class Avaliacao {
 	

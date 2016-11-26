@@ -1,6 +1,7 @@
-package br.unb.cic.imdb.integracao;
-import br.unb.cic.imdb.negocio.FaixaMusical;
+package br.unb.cic.DiariasEPassagens.integracao;
 import java.util.List;
+
+import br.unb.cic.DiariasEPassagens.negocio.FaixaMusical;
 
 public interface DAOFaixaMusical {
 	public void salvar(FaixaMusical faixaMusical);

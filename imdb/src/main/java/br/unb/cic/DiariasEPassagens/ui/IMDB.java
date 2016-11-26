@@ -1,4 +1,4 @@
-package br.unb.cic.imdb.ui;
+package br.unb.cic.DiariasEPassagens.ui;
 
 public class IMDB {
 

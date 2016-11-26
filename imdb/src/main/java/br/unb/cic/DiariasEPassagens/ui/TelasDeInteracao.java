@@ -1,15 +1,16 @@
-package br.unb.cic.imdb.ui;
+package br.unb.cic.DiariasEPassagens.ui;
 
 import java.util.List;
 import java.util.Scanner;
-import br.unb.cic.imdb.util.ContextoID;
-import br.unb.cic.imdb.cadastro.Cadastro;
-import br.unb.cic.imdb.negocio.AlbumMusical;
-import br.unb.cic.imdb.negocio.Autor;
-import br.unb.cic.imdb.negocio.Avaliacao;
-import br.unb.cic.imdb.negocio.FaixaMusical;
-import br.unb.cic.imdb.negocio.Filme;
-import br.unb.cic.imdb.negocio.IMDBFacade;
+
+import br.unb.cic.DiariasEPassagens.cadastro.Cadastro;
+import br.unb.cic.DiariasEPassagens.negocio.AlbumMusical;
+import br.unb.cic.DiariasEPassagens.negocio.Autor;
+import br.unb.cic.DiariasEPassagens.negocio.Avaliacao;
+import br.unb.cic.DiariasEPassagens.negocio.FaixaMusical;
+import br.unb.cic.DiariasEPassagens.negocio.Filme;
+import br.unb.cic.DiariasEPassagens.negocio.IMDBFacade;
+import br.unb.cic.DiariasEPassagens.util.ContextoID;
 
 public abstract class TelasDeInteracao {
 	

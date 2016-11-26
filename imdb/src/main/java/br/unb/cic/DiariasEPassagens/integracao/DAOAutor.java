@@ -1,10 +1,8 @@
-package br.unb.cic.imdb.integracao;
+package br.unb.cic.DiariasEPassagens.integracao;
 
 import java.util.List;
 
-
-
-import br.unb.cic.imdb.negocio.Autor;
+import br.unb.cic.DiariasEPassagens.negocio.Autor;
 
 
 

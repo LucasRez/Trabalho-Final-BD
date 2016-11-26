@@ -1,9 +1,9 @@
-package br.unb.cic.imdb.util;
+package br.unb.cic.DiariasEPassagens.util;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import br.unb.cic.imdb.negocio.IMDBFacade;
+import br.unb.cic.DiariasEPassagens.negocio.IMDBFacade;
 
 public class ContextoID {
 

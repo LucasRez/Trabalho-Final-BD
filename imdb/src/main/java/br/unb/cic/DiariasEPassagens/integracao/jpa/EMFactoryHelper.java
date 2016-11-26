@@ -1,4 +1,4 @@
-package br.unb.cic.imdb.integracao.jpa;
+package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

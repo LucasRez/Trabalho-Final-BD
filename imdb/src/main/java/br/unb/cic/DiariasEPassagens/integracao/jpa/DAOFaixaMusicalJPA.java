@@ -1,7 +1,7 @@
-package br.unb.cic.imdb.integracao.jpa;
+package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
-import br.unb.cic.imdb.integracao.DAOFaixaMusical;
-import br.unb.cic.imdb.negocio.FaixaMusical;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
+import br.unb.cic.DiariasEPassagens.negocio.FaixaMusical;
 
 import java.util.List;
 import javax.persistence.EntityManager;

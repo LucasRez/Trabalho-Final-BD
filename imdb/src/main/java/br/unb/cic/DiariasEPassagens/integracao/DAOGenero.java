@@ -1,8 +1,8 @@
-package br.unb.cic.imdb.integracao;
+package br.unb.cic.DiariasEPassagens.integracao;
 
 import java.util.List;
 
-import br.unb.cic.imdb.negocio.Genero;
+import br.unb.cic.DiariasEPassagens.negocio.Genero;
 
 /**
  * Define os metodos para manipular um 

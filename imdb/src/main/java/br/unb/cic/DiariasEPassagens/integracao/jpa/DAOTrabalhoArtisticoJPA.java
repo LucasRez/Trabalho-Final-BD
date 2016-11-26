@@ -1,9 +1,10 @@
-package br.unb.cic.imdb.integracao.jpa;
+package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
-import br.unb.cic.imdb.integracao.DAOTrabalhoArtistico;
 import java.util.List;
 import javax.persistence.EntityManager;
-import br.unb.cic.imdb.negocio.TrabalhoArtistico;
+
+import br.unb.cic.DiariasEPassagens.integracao.DAOTrabalhoArtistico;
+import br.unb.cic.DiariasEPassagens.negocio.TrabalhoArtistico;
 
 public class DAOTrabalhoArtisticoJPA implements DAOTrabalhoArtistico{
 	

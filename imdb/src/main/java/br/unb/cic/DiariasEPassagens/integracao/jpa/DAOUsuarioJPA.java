@@ -1,11 +1,11 @@
-package br.unb.cic.imdb.integracao.jpa;
+package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import br.unb.cic.imdb.integracao.DAOUsuario;
-import br.unb.cic.imdb.negocio.Usuario;
+import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
+import br.unb.cic.DiariasEPassagens.negocio.Usuario;
 
 
 public class DAOUsuarioJPA implements DAOUsuario{

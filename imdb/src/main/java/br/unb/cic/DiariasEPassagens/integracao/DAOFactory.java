@@ -1,4 +1,4 @@
-package br.unb.cic.imdb.integracao;
+package br.unb.cic.DiariasEPassagens.integracao;
 
 /**
  * Um <i>abstract factory</i> para data access 
@@ -29,9 +29,9 @@ public abstract class DAOFactory {
 	public static DAOFactory instance(DataBase impl) {
 		if(instance == null) {
 			switch(impl) {
-			 case SQLDB : instance = new br.unb.cic.imdb.integracao.jpa.DAOFactoryImpl(); break;
+			 case SQLDB : instance = new br.unb.cic.DiariasEPassagens.integracao.jpa.DAOFactoryImpl(); break;
 			 case COUCHDB : instance = null; break;
-			 case MEMORIA: instance = new br.unb.cic.imdb.integracao.memoria.DAOFactoryImpl();
+			 case MEMORIA: instance = new br.unb.cic.DiariasEPassagens.integracao.memoria.DAOFactoryImpl();
 			}
 		}
 		return instance;
@@ -39,7 +39,7 @@ public abstract class DAOFactory {
 	
 	public abstract DAOGenero createDAOGenero();
 	public abstract DAOTrabalhoArtistico createDAOTrabalhoArtistico();
-	public abstract DAOFilme createDAOFilme();
+	public abstract DAOFavorecido createDAOFilme();
 	public abstract DAOFaixaMusical createDAOFaixaMusical();
 	public abstract DAOAutor createDAOAutor();
 	public abstract DAOAlbumMusical createDAOAlbumMusical();

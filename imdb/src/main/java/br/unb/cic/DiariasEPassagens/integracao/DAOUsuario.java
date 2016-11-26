@@ -1,7 +1,8 @@
-package br.unb.cic.imdb.integracao;
+package br.unb.cic.DiariasEPassagens.integracao;
 
 import java.util.List;
-import br.unb.cic.imdb.negocio.Usuario;
+
+import br.unb.cic.DiariasEPassagens.negocio.Usuario;
 
 public interface DAOUsuario {
 	public void salvar(Usuario usuario);

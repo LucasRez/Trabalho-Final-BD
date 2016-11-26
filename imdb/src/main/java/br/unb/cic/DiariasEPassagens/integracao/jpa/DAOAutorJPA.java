@@ -1,12 +1,9 @@
-package br.unb.cic.imdb.integracao.jpa;
+package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
 
 
-import br.unb.cic.imdb.integracao.DAOAutor;
-
-import br.unb.cic.imdb.negocio.Autor;
-
-
+import br.unb.cic.DiariasEPassagens.integracao.DAOAutor;
+import br.unb.cic.DiariasEPassagens.negocio.Autor;
 
 import javax.persistence.EntityManager;
 

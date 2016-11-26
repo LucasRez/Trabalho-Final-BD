@@ -1,9 +1,9 @@
-package br.unb.cic.imdb.integracao;
+package br.unb.cic.DiariasEPassagens.integracao;
 
 import javax.*;
 import javax.persistence.EntityManager;
 
-import br.unb.cic.imdb.integracao.jpa.EMFactoryHelper;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.EMFactoryHelper;
 import junit.framework.TestCase;
 
 public class FactoryTest extends TestCase{

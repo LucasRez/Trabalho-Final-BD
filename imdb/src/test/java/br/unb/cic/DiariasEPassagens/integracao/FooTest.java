@@ -1,4 +1,4 @@
-package br.unb.cic.imdb.integracao;
+package br.unb.cic.DiariasEPassagens.integracao;
 
 import java.util.ArrayList;
 import java.util.List;

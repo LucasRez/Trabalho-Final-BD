@@ -1,18 +1,18 @@
-package br.unb.cic.imdb.integracao.memoria;
+package br.unb.cic.DiariasEPassagens.integracao.memoria;
 
-import br.unb.cic.imdb.integracao.DAOAlbumMusical;
-import br.unb.cic.imdb.integracao.DAOAutor;
-import br.unb.cic.imdb.integracao.DAOFactory;
-import br.unb.cic.imdb.integracao.DAOFaixaMusical;
-import br.unb.cic.imdb.integracao.DAOFilme;
-import br.unb.cic.imdb.integracao.DAOGenero;
-import br.unb.cic.imdb.integracao.DAOTrabalhoArtistico;
-import br.unb.cic.imdb.integracao.DAOUsuario;
-import br.unb.cic.imdb.integracao.jpa.DAOAlbumMusicalJPA;
-import br.unb.cic.imdb.integracao.jpa.DAOAutorJPA;
-import br.unb.cic.imdb.integracao.jpa.DAOFaixaMusicalJPA;
-import br.unb.cic.imdb.integracao.jpa.DAOTrabalhoArtisticoJPA;
-import br.unb.cic.imdb.integracao.jpa.DAOUsuarioJPA;
+import br.unb.cic.DiariasEPassagens.integracao.DAOAlbumMusical;
+import br.unb.cic.DiariasEPassagens.integracao.DAOAutor;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
+import br.unb.cic.DiariasEPassagens.integracao.DAOGenero;
+import br.unb.cic.DiariasEPassagens.integracao.DAOTrabalhoArtistico;
+import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOAlbumMusicalJPA;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOAutorJPA;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOFaixaMusicalJPA;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOTrabalhoArtisticoJPA;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOUsuarioJPA;
 
 /**
  * Implementacao da classe abstrata DAOFactory 

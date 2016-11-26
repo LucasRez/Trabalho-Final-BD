@@ -1,59 +1,51 @@
-package br.unb.cic.imdb.integracao.jpa;
+package br.unb.cic.DiariasEPassagens.integracao.jpa;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import br.unb.cic.imdb.integracao.DAOFilme;
-import br.unb.cic.imdb.negocio.Autor;
-import br.unb.cic.imdb.negocio.Filme;
-import br.unb.cic.imdb.negocio.Genero;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
+import br.unb.cic.DiariasEPassagens.negocio.CPF;
+import br.unb.cic.DiariasEPassagens.negocio.Favorecido;
+import br.unb.cic.DiariasEPassagens.negocio.PagamValor;
 
-public class DAOFilmeJPA implements DAOFilme{
+public class DAOFavorecidoJPA implements DAOFavorecido{
 	
 	private EntityManager em;
-
+	
 	@Override
-	public void salvar(Filme filme) {
+	public List<Favorecido> recuperaTodos() {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		em.getTransaction().begin();
-		em.persist(filme);
-		em.getTransaction().commit();
+		return em.createQuery("FROM Favorecidos").getResultList();
 	}
 
 	@Override
-	public List<Filme> recuperaTodos() {
+	public Favorecido recuperaPorNome(String Nome) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		return em.createQuery("FROM Filme").getResultList();
+		List<Favorecido> Favorecidos = em.createQuery("FROM Favorecido WHERE Nome = :NomeParam").setParameter("NomeParam", Nome).getResultList();
+		return Favorecidos.size() == 1 ? Favorecidos.get(0) : null;
 	}
 
 	@Override
-	public Filme recuperaPorTitulo(String titulo) {
-		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<Filme> filmes = em.createQuery("FROM Filme WHERE titulo = :tituloParam").setParameter("tituloParam", titulo).getResultList();
-		return filmes.size() == 1 ? filmes.get(0) : null;
-	}
-
-	@Override
-	public List<Filme> recuperaPorGenero(String genero){
-	//public Filme recuperaPorGenero(String genero) {
-		Genero object;
+	public List<Favorecido> recuperaPorCPF(String CPF){
+	//public Favorecido recuperaPorCPF(String CPF) {
+		CPF object;
 		
-		object = new DAOGeneroJPA().recuperaPorTitulo(genero);
+		object = new DAOCPFJPA().recuperaPorNome(CPF);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		return em.createQuery("FROM Filme WHERE genero = :generoParam").setParameter("generoParam", object).getResultList();
-		//return filmes.size() == 1 ? filmes.get(0) : null;
+		return em.createQuery("FROM Favorecido WHERE CPF = :CPFParam").setParameter("CPFParam", object).getResultList();
+		//return Favorecidos.size() == 1 ? Favorecidos.get(0) : null;
 	}
 
 	
 	@Override
-	//public Filme recuperaPorAutor(String autor) {
-	public List<Filme>  recuperaPorAutor(String autor){
-		Autor object;
+	//public Favorecido recuperaPorPagamValor(String PagamValor) {
+	public List<Favorecido>  recuperaPorPagamValor(String PagamValor){
+		PagamValor object;
 		
-		object = new DAOAutorJPA().recuperaPorNome(autor);
+		object = new DAOPagamValorJPA().recuperaPorNome(PagamValor);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		return em.createQuery("FROM Filme WHERE autor =:autorParam").setParameter("autorParam", object).getResultList();
-		//return filmes.size() == 1 ? filmes.get(0) : null;
+		return em.createQuery("FROM Favorecido WHERE PagamValor =:PagamValorParam").setParameter("PagamValorParam", object).getResultList();
+		//return Favorecidos.size() == 1 ? Favorecidos.get(0) : null;
 	}
 	
 }

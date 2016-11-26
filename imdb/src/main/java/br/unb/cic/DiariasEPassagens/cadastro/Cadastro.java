@@ -1,8 +1,8 @@
-package br.unb.cic.imdb.cadastro;
+package br.unb.cic.DiariasEPassagens.cadastro;
 
-import br.unb.cic.imdb.integracao.jpa.*;
-import br.unb.cic.imdb.negocio.*;
-import br.unb.cic.imdb.util.ContextoID;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.*;
+import br.unb.cic.DiariasEPassagens.negocio.*;
+import br.unb.cic.DiariasEPassagens.util.ContextoID;
 
 public class Cadastro {
 	private String loginUsuario;

@@ -1,12 +1,9 @@
-package br.unb.cic.imdb.integracao;
-
-import br.unb.cic.imdb.negocio.Avaliacao;
-
-import br.unb.cic.imdb.negocio.Usuario;
-
-
+package br.unb.cic.DiariasEPassagens.integracao;
 
 import java.util.List;
+
+import br.unb.cic.DiariasEPassagens.negocio.Avaliacao;
+import br.unb.cic.DiariasEPassagens.negocio.Usuario;
 
 
 

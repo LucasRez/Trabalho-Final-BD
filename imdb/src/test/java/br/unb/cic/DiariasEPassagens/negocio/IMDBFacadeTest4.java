@@ -1,6 +1,10 @@
-package br.unb.cic.imdb.negocio;
+package br.unb.cic.DiariasEPassagens.negocio;
 
-import br.unb.cic.imdb.util.ContextoID;
+import br.unb.cic.DiariasEPassagens.negocio.Autor;
+import br.unb.cic.DiariasEPassagens.negocio.Genero;
+import br.unb.cic.DiariasEPassagens.negocio.IMDBFacade;
+import br.unb.cic.DiariasEPassagens.negocio.TrabalhoArtistico;
+import br.unb.cic.DiariasEPassagens.util.ContextoID;
 import junit.framework.TestCase;
 
 public class IMDBFacadeTest4 extends TestCase {

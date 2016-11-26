@@ -1,17 +1,17 @@
-package br.unb.cic.imdb.negocio;
+package br.unb.cic.DiariasEPassagens.negocio;
 
 import java.util.List;
 
-import br.unb.cic.imdb.integracao.DAOAlbumMusical;
-import br.unb.cic.imdb.integracao.DAOAutor;
-import br.unb.cic.imdb.integracao.DAOAvaliacao;
-import br.unb.cic.imdb.integracao.DAOFactory;
-import br.unb.cic.imdb.integracao.DAOFactory.DataBase;
-import br.unb.cic.imdb.integracao.DAOFaixaMusical;
-import br.unb.cic.imdb.integracao.DAOFilme;
-import br.unb.cic.imdb.integracao.DAOGenero;
-import br.unb.cic.imdb.integracao.DAOTrabalhoArtistico;
-import br.unb.cic.imdb.integracao.DAOUsuario;
+import br.unb.cic.DiariasEPassagens.integracao.DAOAlbumMusical;
+import br.unb.cic.DiariasEPassagens.integracao.DAOAutor;
+import br.unb.cic.DiariasEPassagens.integracao.DAOAvaliacao;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
+import br.unb.cic.DiariasEPassagens.integracao.DAOGenero;
+import br.unb.cic.DiariasEPassagens.integracao.DAOTrabalhoArtistico;
+import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFactory.DataBase;
 
 /**
  * Classe de fachada (Facade class) que vai servir de comunicacao 
@@ -24,7 +24,7 @@ public class IMDBFacade {
 	
 	private DAOGenero daoGenero;
 	private DAOTrabalhoArtistico daoTrabalhoArtistico;
-	private DAOFilme daoFilme;
+	private DAOFavorecido daoFilme;
 	private DAOFaixaMusical daoFaixaMusical;
 	private DAOAutor daoAutor;
 	private DAOAlbumMusical daoAlbumMusical;
@@ -145,7 +145,7 @@ public class IMDBFacade {
 		return daoFilme.recuperaPorAutor(autor);
 	}
 	
-	public void setDaoFilme(DAOFilme daoFilme) {
+	public void setDaoFilme(DAOFavorecido daoFilme) {
 		this.daoFilme = daoFilme;
 	}
 	

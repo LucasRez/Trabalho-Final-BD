@@ -1,8 +1,8 @@
-package br.unb.cic.imdb.integracao;
-
-import br.unb.cic.imdb.negocio.AlbumMusical;
+package br.unb.cic.DiariasEPassagens.integracao;
 
 import java.util.List;
+
+import br.unb.cic.DiariasEPassagens.negocio.AlbumMusical;
 
 
 

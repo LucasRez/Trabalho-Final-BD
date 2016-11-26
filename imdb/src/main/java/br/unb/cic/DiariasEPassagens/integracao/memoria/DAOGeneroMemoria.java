@@ -1,10 +1,10 @@
-package br.unb.cic.imdb.integracao.memoria;
+package br.unb.cic.DiariasEPassagens.integracao.memoria;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import br.unb.cic.imdb.integracao.DAOGenero;
-import br.unb.cic.imdb.negocio.Genero;
+import br.unb.cic.DiariasEPassagens.integracao.DAOGenero;
+import br.unb.cic.DiariasEPassagens.negocio.Genero;
 
 /**
  * Implementacao do DAOGenero em memoria. Util 

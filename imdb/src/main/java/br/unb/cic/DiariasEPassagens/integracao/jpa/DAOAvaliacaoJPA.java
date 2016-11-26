@@ -1,4 +1,4 @@
-package br.unb.cic.imdb.integracao.jpa;
+package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
 import java.util.List;
 
@@ -6,15 +6,12 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-
-
-import br.unb.cic.imdb.integracao.DAOAvaliacao;
-import br.unb.cic.imdb.negocio.AlbumMusical;
-import br.unb.cic.imdb.negocio.Autor;
-
-import br.unb.cic.imdb.negocio.Avaliacao;
-import br.unb.cic.imdb.negocio.Filme;
-import br.unb.cic.imdb.negocio.Usuario;
+import br.unb.cic.DiariasEPassagens.integracao.DAOAvaliacao;
+import br.unb.cic.DiariasEPassagens.negocio.AlbumMusical;
+import br.unb.cic.DiariasEPassagens.negocio.Autor;
+import br.unb.cic.DiariasEPassagens.negocio.Avaliacao;
+import br.unb.cic.DiariasEPassagens.negocio.Filme;
+import br.unb.cic.DiariasEPassagens.negocio.Usuario;
 
 
 public class DAOAvaliacaoJPA implements DAOAvaliacao{

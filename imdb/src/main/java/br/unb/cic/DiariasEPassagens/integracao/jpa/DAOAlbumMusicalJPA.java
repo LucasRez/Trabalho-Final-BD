@@ -1,16 +1,15 @@
-package br.unb.cic.imdb.integracao.jpa;
+package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
 
-
-import br.unb.cic.imdb.integracao.DAOAlbumMusical;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import br.unb.cic.imdb.negocio.AlbumMusical;
-import br.unb.cic.imdb.negocio.Autor;
-import br.unb.cic.imdb.negocio.Genero;
+import br.unb.cic.DiariasEPassagens.integracao.DAOAlbumMusical;
+import br.unb.cic.DiariasEPassagens.negocio.AlbumMusical;
+import br.unb.cic.DiariasEPassagens.negocio.Autor;
+import br.unb.cic.DiariasEPassagens.negocio.Genero;
 
 
 
