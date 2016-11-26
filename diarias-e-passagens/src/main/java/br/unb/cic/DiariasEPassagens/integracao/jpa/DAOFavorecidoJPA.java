@@ -4,9 +4,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
-import br.unb.cic.DiariasEPassagens.negocio.CPF;
-import br.unb.cic.DiariasEPassagens.negocio.Favorecido;
-import br.unb.cic.DiariasEPassagens.negocio.PagamValor;
+import br.unb.cic.DiariasEPassagens.negocio.UnidadeGestora;
+import br.unb.cic.DiariasEPassagens.negocio.Pagamento;
 
 public class DAOFavorecidoJPA implements DAOFavorecido{
 	
