@@ -3,7 +3,7 @@ package br.unb.cic.DiariasEPassagens.integracao.memoria;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.unb.cic.DiariasEPassagens.integracao.DAOGenero;
+import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
 import br.unb.cic.DiariasEPassagens.negocio.Genero;
 
 /**
@@ -14,7 +14,7 @@ import br.unb.cic.DiariasEPassagens.negocio.Genero;
  * 
  * @author rbonifacio
  */
-public class DAOGeneroMemoria implements DAOGenero {
+public class DAOGeneroMemoria implements DAOUnidadeGestora {
 
 	//nessa simulacao, todos os generos sao mantidos em uma lista
 	private List<Genero> generos;

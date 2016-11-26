@@ -6,7 +6,7 @@ import br.unb.cic.DiariasEPassagens.integracao.DAOAvaliacao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
-import br.unb.cic.DiariasEPassagens.integracao.DAOGenero;
+import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
 import br.unb.cic.DiariasEPassagens.integracao.DAOTrabalhoArtistico;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
 
@@ -18,7 +18,7 @@ import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
  */
 public class DAOFactoryImpl extends DAOFactory {
 	@Override
-	public DAOGenero createDAOGenero() {
+	public DAOUnidadeGestora createDAOGenero() {
 		return new DAOGeneroJPA();
 	}
 

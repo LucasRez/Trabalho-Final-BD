@@ -37,7 +37,7 @@ public abstract class DAOFactory {
 		return instance;
 	}
 	
-	public abstract DAOGenero createDAOGenero();
+	public abstract DAOUnidadeGestora createDAOGenero();
 	public abstract DAOTrabalhoArtistico createDAOTrabalhoArtistico();
 	public abstract DAOFavorecido createDAOFilme();
 	public abstract DAOFaixaMusical createDAOFaixaMusical();

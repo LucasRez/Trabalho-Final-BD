@@ -8,7 +8,7 @@ import br.unb.cic.DiariasEPassagens.integracao.DAOAvaliacao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
-import br.unb.cic.DiariasEPassagens.integracao.DAOGenero;
+import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
 import br.unb.cic.DiariasEPassagens.integracao.DAOTrabalhoArtistico;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFactory.DataBase;
@@ -22,7 +22,7 @@ import br.unb.cic.DiariasEPassagens.integracao.DAOFactory.DataBase;
  */
 public class IMDBFacade {
 	
-	private DAOGenero daoGenero;
+	private DAOUnidadeGestora daoGenero;
 	private DAOTrabalhoArtistico daoTrabalhoArtistico;
 	private DAOFavorecido daoFilme;
 	private DAOFaixaMusical daoFaixaMusical;
@@ -87,7 +87,7 @@ public class IMDBFacade {
 		return daoGenero.recuperaPorTitulo(titulo);
 	}
 	
-	public void setDaoGenero(DAOGenero daoGenero) {
+	public void setDaoGenero(DAOUnidadeGestora daoGenero) {
 		this.daoGenero = daoGenero;
 	}
 	
