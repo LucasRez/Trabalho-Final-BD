@@ -1,13 +1,13 @@
 package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
-import br.unb.cic.DiariasEPassagens.integracao.DAOAlbumMusical;
-import br.unb.cic.DiariasEPassagens.integracao.DAOAutor;
+import br.unb.cic.DiariasEPassagens.integracao.DAOAcao;
+import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOAvaliacao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
-import br.unb.cic.DiariasEPassagens.integracao.DAOGenero;
-import br.unb.cic.DiariasEPassagens.integracao.DAOTrabalhoArtistico;
+import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
 
 /**
@@ -18,13 +18,13 @@ import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
  */
 public class DAOFactoryImpl extends DAOFactory {
 	@Override
-	public DAOGenero createDAOGenero() {
+	public DAOUnidadeGestora createDAOGenero() {
 		return new DAOGeneroJPA();
 	}
 
 	@Override
-	public DAOTrabalhoArtistico createDAOTrabalhoArtistico() {
-		return new DAOTrabalhoArtisticoJPA();
+	public DAOFuncao createDAOTrabalhoArtistico() {
+		return new DAOFuncaoJPA();
 	}
 
 	@Override
@@ -34,17 +34,17 @@ public class DAOFactoryImpl extends DAOFactory {
 
 	@Override
 	public DAOFaixaMusical createDAOFaixaMusical() {
-		return new DAOFaixaMusicalJPA();
+		return new DAOOrgaoSubordinadoJPA();
 	}
 
 	@Override
-	public DAOAutor createDAOAutor() {
-		return new DAOAutorJPA();
+	public DAOSubFuncao createDAOAutor() {
+		return new DAOSubFuncaoJPA();
 	}
 
 	@Override
-	public DAOAlbumMusical createDAOAlbumMusical() {
-		return new DAOAlbumMusicalJPA();
+	public DAOAcao createDAOAlbumMusical() {
+		return new DAOAcaoJPA();
 	}
 
 	@Override

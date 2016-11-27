@@ -2,14 +2,14 @@ package br.unb.cic.DiariasEPassagens.negocio;
 
 import java.util.List;
 
-import br.unb.cic.DiariasEPassagens.integracao.DAOAlbumMusical;
-import br.unb.cic.DiariasEPassagens.integracao.DAOAutor;
+import br.unb.cic.DiariasEPassagens.integracao.DAOAcao;
+import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOAvaliacao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
-import br.unb.cic.DiariasEPassagens.integracao.DAOGenero;
-import br.unb.cic.DiariasEPassagens.integracao.DAOTrabalhoArtistico;
+import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFactory.DataBase;
 
@@ -22,12 +22,12 @@ import br.unb.cic.DiariasEPassagens.integracao.DAOFactory.DataBase;
  */
 public class IMDBFacade {
 	
-	private DAOGenero daoGenero;
-	private DAOTrabalhoArtistico daoTrabalhoArtistico;
+	private DAOUnidadeGestora daoGenero;
+	private DAOFuncao daoTrabalhoArtistico;
 	private DAOFavorecido daoFilme;
 	private DAOFaixaMusical daoFaixaMusical;
-	private DAOAutor daoAutor;
-	private DAOAlbumMusical daoAlbumMusical;
+	private DAOSubFuncao daoAutor;
+	private DAOAcao daoAlbumMusical;
 	private DAOUsuario daoUsuario;
 	private DAOAvaliacao daoAvaliacao;
 
@@ -87,7 +87,7 @@ public class IMDBFacade {
 		return daoGenero.recuperaPorTitulo(titulo);
 	}
 	
-	public void setDaoGenero(DAOGenero daoGenero) {
+	public void setDaoGenero(DAOUnidadeGestora daoGenero) {
 		this.daoGenero = daoGenero;
 	}
 	
@@ -116,7 +116,7 @@ public class IMDBFacade {
 		return daoTrabalhoArtistico.recuperarPorAutor(autor);
 	}
 	
-	public void setDaoTrabalhoArtistico(DAOTrabalhoArtistico daoTrabalhoArtistico) {
+	public void setDaoTrabalhoArtistico(DAOFuncao daoTrabalhoArtistico) {
 		this.daoTrabalhoArtistico = daoTrabalhoArtistico;
 	}
 	
@@ -207,7 +207,7 @@ public class IMDBFacade {
 		return daoAutor.recuperaAutoresPorTrabalhoArtistico(trabalho);
 	}
 	
-	public void setDaoAutor(DAOAutor daoAutor) {
+	public void setDaoAutor(DAOSubFuncao daoAutor) {
 		this.daoAutor = daoAutor;
 	}
 	
@@ -240,7 +240,7 @@ public class IMDBFacade {
 		return daoAlbumMusical.recuperaAlbunsPorAno(ano);
 	}
 	
-	public void setDaoAlbumMusical(DAOAlbumMusical daoAlbumMusical) {
+	public void setDaoAlbumMusical(DAOAcao daoAlbumMusical) {
 		this.daoAlbumMusical = daoAlbumMusical;
 	}
 	

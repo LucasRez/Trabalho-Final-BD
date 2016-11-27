@@ -6,7 +6,9 @@ import br.unb.cic.DiariasEPassagens.negocio.Favorecido;
 
 public interface DAOFavorecido {
 	public List<Favorecido> recuperaTodos();
-	public Beneficiario recuperaPorNome(String Nome);
-	public List<Favorecido> recuperaPorCPF(String CPF);
-	public List<Favorecido> recuperaPorPagamValor(String PagamValor);
+	public Favorecido recuperaPorNome(String nome);
+	public Favorecido recuperaPorCPF(String CPF);
+	public Favorecido recuperaPorPagamValor(String pagamValor);
+	public List<Favorecido> recuperaPorUnidadeGestora(String unidadeGestora);
+	public List<Favorecido> recuperaPorPagamento(String pagamento);
 }

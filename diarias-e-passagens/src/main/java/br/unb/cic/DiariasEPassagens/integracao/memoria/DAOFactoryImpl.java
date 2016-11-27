@@ -1,17 +1,17 @@
 package br.unb.cic.DiariasEPassagens.integracao.memoria;
 
-import br.unb.cic.DiariasEPassagens.integracao.DAOAlbumMusical;
-import br.unb.cic.DiariasEPassagens.integracao.DAOAutor;
+import br.unb.cic.DiariasEPassagens.integracao.DAOAcao;
+import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
-import br.unb.cic.DiariasEPassagens.integracao.DAOGenero;
-import br.unb.cic.DiariasEPassagens.integracao.DAOTrabalhoArtistico;
+import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
-import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOAlbumMusicalJPA;
-import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOAutorJPA;
-import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOFaixaMusicalJPA;
-import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOTrabalhoArtisticoJPA;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOAcaoJPA;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOSubFuncaoJPA;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOOrgaoSubordinadoJPA;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOFuncaoJPA;
 import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOUsuarioJPA;
 
 /**
@@ -28,7 +28,7 @@ public class DAOFactoryImpl extends DAOFactory {
 		super();
 	} 
 	
-	public DAOGenero createDAOGenero() {
+	public DAOUnidadeGestora createDAOGenero() {
 		return new DAOGeneroMemoria();
 	}
 	
