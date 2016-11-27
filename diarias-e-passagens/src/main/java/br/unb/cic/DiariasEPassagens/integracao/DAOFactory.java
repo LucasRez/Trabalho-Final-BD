@@ -42,7 +42,7 @@ public abstract class DAOFactory {
 	public abstract DAOFavorecido createDAOFilme();
 	public abstract DAOFaixaMusical createDAOFaixaMusical();
 	public abstract DAOSubFuncao createDAOAutor();
-	public abstract DAOAlbumMusical createDAOAlbumMusical();
+	public abstract DAOAcao createDAOAlbumMusical();
 	public abstract DAOUsuario createDAOUsuario();
 	public abstract DAOAvaliacao createDAOAvaliacao();
 }

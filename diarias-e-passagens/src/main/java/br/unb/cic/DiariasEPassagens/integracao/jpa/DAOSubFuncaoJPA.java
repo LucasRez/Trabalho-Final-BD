@@ -46,7 +46,7 @@ public class DAOSubFuncaoJPA implements DAOSubFuncao{
 
 	@Override
 	public List<SubFuncao> recuperaSubFuncaoPorFuncao(String funcao){
-		funcaoobject;
+		funcao object;
 		
 		object = new DAOfuncaoJPA().recuperaPorNome(funcao);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
