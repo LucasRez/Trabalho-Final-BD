@@ -1,4 +1,4 @@
-CREATE TABLE Orgao_Superior
+﻿CREATE TABLE Orgao_Superior
 (
   OrgSupNome varchar(200) NOT NULL,
   OrgSupCod INTEGER NOT NULL,
@@ -68,12 +68,14 @@ CREATE TABLE Pagamento
 (
   PagamCod char(12) NOT NULL,
   PagamData char(10) NOT NULL,
-  PagamValor varchar(20) NOT NULL,
+  PagamValor real NOT NULL,
   PagamGestCod INTEGER NOT NULL,
   FavorecidoCPF char(14) NOT NULL,
   FavorecidoID serial,
+  AcaoCod varchar(20),
   PRIMARY KEY (FavorecidoID),
   FOREIGN KEY (FavorecidoID, FavorecidoCPF) REFERENCES Favorecido(FavorecidoID, FavorecidoCPF),
+  FOREIGN KEY (AcaoCod) REFERENCES Acao(AcaoCod),
   unique(PagamCod, FavorecidoID)
 );
 
@@ -95,15 +97,6 @@ CREATE TABLE Possui
   FOREIGN KEY (SubfuncCod) REFERENCES Subfuncao(SubfuncCod)
 );
 
-CREATE TABLE Justifica
-(
-  AcaoCod varchar(20) NOT NULL,
-  PagamCod char(12) NOT NULL,
-  FavorecidoID serial,
-  PRIMARY KEY (AcaoCod, FavorecidoID),
-  FOREIGN KEY (AcaoCod) REFERENCES Acao(AcaoCod),
-  FOREIGN KEY (PagamCod, FavorecidoID) REFERENCES Pagamento(PagamCod, FavorecidoID)
-);
 
 CREATE temp TABLE tab_temp(
   CodOrgSup integer not null,
@@ -126,15 +119,15 @@ CREATE temp TABLE tab_temp(
   CodPagam char(12) not null,
   GestPagam integer not null,
   DataPagam char(10) not null,
-  ValorPagam varchar(20) not null 
+  ValorPagam real not null 
 );
 
-copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201301_Diarias.csv' delimiter '  ' encoding 'WIN1252' csv header;
-copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201302_Diarias.csv' delimiter '  ' encoding 'WIN1252' csv header;
-copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201303_Diarias.csv' delimiter '  ' encoding 'WIN1252' csv header;
-copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201304_Diarias.csv' delimiter '  ' encoding 'WIN1252' csv header;
-copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201305_Diarias.csv' delimiter '  ' encoding 'WIN1252' csv header;
-copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201306_Diarias.csv' delimiter '  ' encoding 'WIN1252' csv header;
+copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201301_Diarias.csv' delimiter '	' encoding 'WIN1252' csv header;
+copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201302_Diarias.csv' delimiter '	' encoding 'WIN1252' csv header;
+copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201303_Diarias.csv' delimiter '	' encoding 'WIN1252' csv header;
+copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201304_Diarias.csv' delimiter '	' encoding 'WIN1252' csv header;
+copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201305_Diarias.csv' delimiter '	' encoding 'WIN1252' csv header;
+copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201306_Diarias.csv' delimiter '	' encoding 'WIN1252' csv header;
 
 insert into Orgao_Superior (OrgSupCod, OrgSupNome)
 select distinct on (CodOrgSup) CodOrgSup, NomeCodSup from tab_temp order by CodOrgSup, NomeCodSup;
@@ -160,8 +153,8 @@ select distinct on (CodAcao) CodAcao, NomeAcao, LingCidada, CodProg from tab_tem
 insert into Favorecido (FavorecidoCPF, FavorecidoNome, UniGestCod)
 select CPFFav, NomeFav, CodUniGest from tab_temp;
 
-insert into Pagamento (FavorecidoCPF, PagamData, PagamValor, PagamGestCod, PagamCod)
-select CPFFav, DataPagam, ValorPagam, GestPagam, CodPagam from tab_temp;
+insert into Pagamento (FavorecidoCPF, PagamData, PagamValor, PagamGestCod, PagamCod, AcaoCod)
+select CPFFav, DataPagam, ValorPagam, GestPagam, CodPagam, CodAcao from tab_temp;
 
 insert into Exerce (UniGestCod, FuncCod)
 select distinct on (CodUniGest) CodUniGest, CodFunc from tab_temp order by CodUniGest, CodFunc;
@@ -169,6 +162,4 @@ select distinct on (CodUniGest) CodUniGest, CodFunc from tab_temp order by CodUn
 insert into Possui (FuncCod, SubfuncCod)
 select distinct on (CodFunc) CodFunc, CodSubFunc from tab_temp order by CodFunc, CodSubFunc;
 
-insert into Justifica (AcaoCod, PagamCod)
-select CodAcao, CodPagam from tab_temp;
 
