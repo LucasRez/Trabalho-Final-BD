@@ -13,7 +13,7 @@ public class Pagamento {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="favorecidoid")
-	private String id;
+	private int id;
 	
 	@Column(name="pagamcod")
 	private String codigo;
@@ -32,11 +32,10 @@ public class Pagamento {
 	private Favorecido favorecido;
 	
 	@ManyToOne
-	@JoinColumn(name="pagamgestcod", nullable=false)
+	@JoinColumn(name="acaocod", nullable=false)
 	private Acao acao;
 
-	public Pagamento(String id, String codigo, String data, String valor, int gestCod, Favorecido favorecido,
-			Acao acao) {
+	public Pagamento(int id, String codigo, String data, String valor, int gestCod, Favorecido favorecido, Acao acao) {
 		super();
 		this.id = id;
 		this.codigo = codigo;
@@ -46,7 +45,11 @@ public class Pagamento {
 		this.favorecido = favorecido;
 		this.acao = acao;
 	}
-
+	
+	public int getId() {
+		return id;
+	}
+	
 	public String getCodigo() {
 		return codigo;
 	}
@@ -93,11 +96,6 @@ public class Pagamento {
 
 	public void setAcao(Acao acao) {
 		this.acao = acao;
-	}
-
-	public String getId() {
-		return id;
-	}
-	
+	}	
 	
 }

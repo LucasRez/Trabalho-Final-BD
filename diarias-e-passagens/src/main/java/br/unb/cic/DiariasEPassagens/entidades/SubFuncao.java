@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 public class SubFuncao {

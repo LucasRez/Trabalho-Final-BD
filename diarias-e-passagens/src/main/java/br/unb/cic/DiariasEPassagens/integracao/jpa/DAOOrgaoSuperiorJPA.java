@@ -3,9 +3,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import br.unb.cic.DiariasEPassagens.entidades.OrgaoSuperior;
 import br.unb.cic.DiariasEPassagens.integracao.DAOOrgaoSuperior;
-import br.unb.cic.DiariasEPassagens.negocio.OrgaoSubordinado;
-import br.unb.cic.DiariasEPassagens.negocio.OrgaoSuperior;
 
 public class DAOOrgaoSuperiorJPA implements DAOOrgaoSuperior{
 	
@@ -25,7 +24,7 @@ public class DAOOrgaoSuperiorJPA implements DAOOrgaoSuperior{
 	}
 	
 	@Override
-	public OrgaoSuperior recuperaPorID(String id) {
+	public OrgaoSuperior recuperaPorID(int id) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
 		List<OrgaoSuperior> OrgaoSuperiores = em.createQuery("FROM OrgaoSuperior WHERE Id = :IdParam").setParameter("IdParam", id).getResultList();
 		return OrgaoSuperiores.size() == 1 ? OrgaoSuperiores.get(0) : null;

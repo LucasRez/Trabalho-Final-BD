@@ -122,12 +122,12 @@ CREATE temp TABLE tab_temp(
   ValorPagam real not null 
 );
 
-copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201301_Diarias.csv' delimiter '	' encoding 'WIN1252' csv header;
-copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201302_Diarias.csv' delimiter '	' encoding 'WIN1252' csv header;
-copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201303_Diarias.csv' delimiter '	' encoding 'WIN1252' csv header;
-copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201304_Diarias.csv' delimiter '	' encoding 'WIN1252' csv header;
-copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201305_Diarias.csv' delimiter '	' encoding 'WIN1252' csv header;
-copy tab_temp FROM '/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Dados/201306_Diarias.csv' delimiter '	' encoding 'WIN1252' csv header;
+copy tab_temp FROM '/home/Público/csv/201301_Diarias.csv' delimiter '	' csv;
+copy tab_temp FROM '/home/Público/csv/201302_Diarias.csv' delimiter '	' csv;
+copy tab_temp FROM '/home/Público/csv/201303_Diarias.csv' delimiter '	' csv;
+copy tab_temp FROM '/home/Público/csv/201304_Diarias.csv' delimiter '	' csv;
+copy tab_temp FROM '/home/Público/csv/201305_Diarias.csv' delimiter '	' csv;
+copy tab_temp FROM '/home/Público/csv/201306_Diarias.csv' delimiter '	' csv;
 
 insert into Orgao_Superior (OrgSupCod, OrgSupNome)
 select distinct on (CodOrgSup) CodOrgSup, NomeCodSup from tab_temp order by CodOrgSup, NomeCodSup;

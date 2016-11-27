@@ -2,15 +2,13 @@ package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
 
 
-import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
-import br.unb.cic.DiariasEPassagens.integracao.SubFuncao;
-import br.unb.cic.DiariasEPassagens.negocio.subFuncao;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 
-
-
-import java.util.List;
+import br.unb.cic.DiariasEPassagens.entidades.Funcao;
+import br.unb.cic.DiariasEPassagens.entidades.SubFuncao;
+import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
 
 
 
@@ -23,7 +21,7 @@ public class DAOSubFuncaoJPA implements DAOSubFuncao{
 
 	@Override
 
-	public List<subFuncao> recuperaTodos() {
+	public List<SubFuncao> recuperaTodos() {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
 		return em.createQuery("FROM subFuncao").getResultList();
 	}
@@ -31,29 +29,26 @@ public class DAOSubFuncaoJPA implements DAOSubFuncao{
 
 
 	@Override
-	public subFuncao recuperaPorNome(String nome) {
+	public SubFuncao recuperaPorNome(String nome) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<subFuncao> subFuncao = em.createQuery("FROM subFuncao WHERE nome = :nomeParam").setParameter("nomeParam", nome).getResultList();
+		List<SubFuncao> subFuncao = em.createQuery("FROM subFuncao WHERE nome = :nomeParam").setParameter("nomeParam", nome).getResultList();
 		return subFuncao.size() == 1 ? subFuncao.get(0): null;
 	}
 
 	@Override
-	public subFuncao recuperaPorID(String id) {
+	public SubFuncao recuperaPorID(int id) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<subFuncao> subFuncao = em.createQuery("FROM subFuncao WHERE id = :idParam").setParameter("idParam", id).getResultList();
+		List<SubFuncao> subFuncao = em.createQuery("FROM subFuncao WHERE id = :idParam").setParameter("idParam", id).getResultList();
 		return subFuncao.size() == 1 ? subFuncao.get(0): null;
 	}
 
 	@Override
 	public List<SubFuncao> recuperaSubFuncaoPorFuncao(String funcao){
-		funcao object;
+		Funcao object;
 		
-		object = new DAOfuncaoJPA().recuperaPorNome(funcao);
+		object = new DAOFuncaoJPA().recuperaPorNome(funcao);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
 		return em.createQuery("FROM Favorecido WHERE funcao = :funcaoParam").setParameter("funcaoParam", object).getResultList();
 		
 	}
-	}
-
-
 }

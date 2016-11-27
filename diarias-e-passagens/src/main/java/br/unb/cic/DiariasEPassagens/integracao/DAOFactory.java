@@ -17,7 +17,6 @@ public abstract class DAOFactory {
 			switch(impl) {
 			 case SQLDB : instance = new br.unb.cic.DiariasEPassagens.integracao.jpa.DAOFactoryImpl(); break;
 			 case COUCHDB : instance = null; break;
-			 case MEMORIA: instance = new br.unb.cic.DiariasEPassagens.integracao.memoria.DAOFactoryImpl();
 			}
 		}
 		return instance;

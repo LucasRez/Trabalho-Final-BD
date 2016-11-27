@@ -2,15 +2,14 @@ package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
 
 
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import br.unb.cic.DiariasEPassagens.integracao.Acao;
+import br.unb.cic.DiariasEPassagens.entidades.Acao;
+import br.unb.cic.DiariasEPassagens.entidades.Programa;
 import br.unb.cic.DiariasEPassagens.integracao.DAOAcao;
-import br.unb.cic.DiariasEPassagens.negocio.acao;
-import br.unb.cic.DiariasEPassagens.negocio.Pagamento;
-import br.unb.cic.DiariasEPassagens.negocio.Programa;
 
 
 
@@ -21,35 +20,35 @@ public class DAOAcaoJPA implements DAOAcao{
 	private EntityManager em;
 
 	@Override
-	public List<acao> recuperaTodos() {
+	public List<Acao> recuperaTodos() {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		return em.createQuery("FROM acao").getResultList();
+		return em.createQuery("FROM Acao").getResultList();
 	}
 
 
 
 	@Override
-	public acao recuperaPorNome(String nome) {
+	public Acao recuperaPorNome(String nome) {
 		
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<acao> acao = em.createQuery("FROM acao WHERE Nome = :NomeParam").setParameter("NomeParam", nome).getResultList();
-		return acao.size() == 1 ? acao.get(0) : null;
+		List<Acao> Acao = em.createQuery("FROM Acao WHERE acaonome = :NomeParam").setParameter("NomeParam", nome).getResultList();
+		return Acao.size() == 1 ? Acao.get(0) : null;
 	}
 
 
 
 	@Override
-	public acao recuperaPorId(String id) {
+	public Acao recuperaPorId(String id) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<acao> acao = em.createQuery("FROM acao WHERE ID = :IdParam").setParameter("IdParam", id).getResultList();
-		return acao.size() == 1 ? acao.get(0) : null;
+		List<Acao> Acao = em.createQuery("FROM Acao WHERE acaocod = :IdParam").setParameter("IdParam", id).getResultList();
+		return Acao.size() == 1 ? Acao.get(0) : null;
 	}
 
 	@Override
-	public acao recuperaPorLinguagemCidada(String linguagemCidada){
+	public Acao recuperaPorLinguagemCidada(String linguagemCidada){
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<acao> acao = em.createQuery("FROM acao WHERE linguagemCidada = :linguagemCidadaParam").setParameter("linguagemCidadaParam", linguagemCidada).getResultList();
-		return acao.size() == 1 ? acao.get(0) : null;
+		List<Acao> Acao = em.createQuery("FROM Acao WHERE linguagem_cidada = :linguagemCidadaParam").setParameter("linguagemCidadaParam", linguagemCidada).getResultList();
+		return Acao.size() == 1 ? Acao.get(0) : null;
 	}
 
 	
@@ -57,25 +56,11 @@ public class DAOAcaoJPA implements DAOAcao{
 
 	@Override
 	public List<Acao> recuperaAcoesPorPrograma(String programa) {
-		programa object;
+		Programa object;
 		object = new DAOProgramaJPA().recuperaPorNome(programa);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
 
-		return em.createQuery("FROM acao WHERE Programa = :programaParam").setParameter("programaParam", object).getResultList();
+		return em.createQuery("FROM Acao WHERE progcod = :programaParam").setParameter("programaParam", object.getId()).getResultList();
 	}
-
-
-
-	@Override
-
-	public List<acao> recuperaAlbunsPorAno(int ano) {
-
-		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-
-		return em.createQuery("FROM acao WHERE ano = :anoParam").setParameter("anoParam", ano).getResultList();
-
-	}
-
-
 
 }
