@@ -19,14 +19,14 @@ public class DAOProgramaJPA implements DAOPrograma{
 	@Override
 	public Programa recuperaPorNome(String nome) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<Programa> Programas = em.createQuery("FROM Programa WHERE Nome = :NomeParam").setParameter("NomeParam", nome).getResultList();
+		List<Programa> Programas = em.createQuery("FROM Programa WHERE progNome = :NomeParam").setParameter("NomeParam", nome).getResultList();
 		return Programas.size() == 1 ? Programas.get(0) : null;
 	}
 	
 	@Override
 	public Programa recuperaPorID(int id) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<Programa> Programas = em.createQuery("FROM Programa WHERE Id = :IdParam").setParameter("IdParam", id).getResultList();
+		List<Programa> Programas = em.createQuery("FROM Programa WHERE progcod = :IdParam").setParameter("IdParam", id).getResultList();
 		return Programas.size() == 1 ? Programas.get(0) : null;
 	}
 

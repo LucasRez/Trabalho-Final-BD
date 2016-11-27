@@ -31,14 +31,14 @@ public class DAOSubFuncaoJPA implements DAOSubFuncao{
 	@Override
 	public SubFuncao recuperaPorNome(String nome) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<SubFuncao> subFuncao = em.createQuery("FROM subFuncao WHERE nome = :nomeParam").setParameter("nomeParam", nome).getResultList();
+		List<SubFuncao> subFuncao = em.createQuery("FROM subFuncao WHERE subfuncnome = :nomeParam").setParameter("nomeParam", nome).getResultList();
 		return subFuncao.size() == 1 ? subFuncao.get(0): null;
 	}
 
 	@Override
 	public SubFuncao recuperaPorID(int id) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<SubFuncao> subFuncao = em.createQuery("FROM subFuncao WHERE id = :idParam").setParameter("idParam", id).getResultList();
+		List<SubFuncao> subFuncao = em.createQuery("FROM subFuncao WHERE subfunccod = :idParam").setParameter("idParam", id).getResultList();
 		return subFuncao.size() == 1 ? subFuncao.get(0): null;
 	}
 
@@ -48,7 +48,7 @@ public class DAOSubFuncaoJPA implements DAOSubFuncao{
 		
 		object = new DAOFuncaoJPA().recuperaPorNome(funcao);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		return em.createQuery("FROM Favorecido WHERE funcao = :funcaoParam").setParameter("funcaoParam", object).getResultList();
+		return em.createQuery("FROM subFuncao WHERE funccod = :funcaoParam").setParameter("funcaoParam", object.getId()).getResultList();
 		
 	}
 }

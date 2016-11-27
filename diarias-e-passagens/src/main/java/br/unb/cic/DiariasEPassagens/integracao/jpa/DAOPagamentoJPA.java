@@ -20,7 +20,7 @@ public class DAOPagamentoJPA implements DAOPagamento{
 		Acao object;
 		object = new DAOAcaoJPA().recuperaPorNome(acao);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		return em.createQuery("FROM Pagamento WHERE acao = :acaoParam").setParameter("acaoParam", object).getResultList();
+		return em.createQuery("FROM Pagamento WHERE acaocod = :acaoParam").setParameter("acaoParam", object.getId()).getResultList();
 	}
 
 
@@ -31,40 +31,38 @@ public class DAOPagamentoJPA implements DAOPagamento{
 		object = new DAOFavorecidoJPA().recuperaPorNome(favorecido);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
 
-		return em.createQuery("FROM Pagamento WHERE favorecido = :favorecidoParam").setParameter("favorecidoParam", object).getResultList();
+		return em.createQuery("FROM Pagamento WHERE favorecidoid = :favorecidoParam").setParameter("favorecidoParam", object.getId()).getResultList();
 
 	}
-
-
 
 	@Override
 	public Pagamento recuperaPorData(String data) {
-		// TODO Auto-generated method stub
-		return null;
+		em = EMFactoryHelper.instance().getFactory().createEntityManager();
+		List<Pagamento> Pagamentos = em.createQuery("FROM Pagamento WHERE pagamdata = :DataParam").setParameter("dataParam", data).getResultList();
+		return Pagamentos.size() == 1 ? Pagamentos.get(0) : null;
+	
 	}
-
 
 
 	@Override
 	public Pagamento recuperaPorValor(String valor) {
-		// TODO Auto-generated method stub
-		return null;
+		em = EMFactoryHelper.instance().getFactory().createEntityManager();
+		List<Pagamento> Pagamentos = em.createQuery("FROM Pagamento WHERE pagamvalor = :ValorParam").setParameter("ValorParam", valor).getResultList();
+		return Pagamentos.size() == 1 ? Pagamentos.get(0) : null;
 	}
-
-
-
-	@Override
-	public Pagamento recuperaPorNome(String nome) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 
 	@Override
 	public Pagamento recuperaPorID(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		em = EMFactoryHelper.instance().getFactory().createEntityManager();
+		List<Pagamento> Pagamentos = em.createQuery("FROM Pagamento WHERE pagamcod = :IDParam").setParameter("IDParam", id).getResultList();
+		return Pagamentos.size() == 1 ? Pagamentos.get(0) : null;
 	}
-
+	
+	@Override
+	public Pagamento recuperaPorGestao(int gestaocod){
+		em = EMFactoryHelper.instance().getFactory().createEntityManager();
+		List<Pagamento> Pagamentos = em.createQuery("FROM Pagamento WHERE pagamgestcod = :GestaoParam").setParameter("GestaoParam", gestaocod).getResultList();
+		return Pagamentos.size() == 1 ? Pagamentos.get(0) : null;
+	}
 }

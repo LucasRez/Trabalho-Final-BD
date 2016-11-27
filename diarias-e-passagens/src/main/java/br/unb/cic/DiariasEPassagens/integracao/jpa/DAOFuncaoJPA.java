@@ -21,14 +21,14 @@ public class DAOFuncaoJPA implements DAOFuncao{
 	@Override
 	public Funcao recuperarPorID(int id) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<Funcao> Funcao = em.createQuery("FROM Funcao WHERE id = :idParam").setParameter("idParam", id).getResultList();
+		List<Funcao> Funcao = em.createQuery("FROM Funcao WHERE funccod = :idParam").setParameter("idParam", id).getResultList();
 		return Funcao.size() == 1 ? Funcao.get(0) : null;
 	}
 
 	@Override
 	public Funcao recuperaPorNome(String nome) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<Funcao> Funcao = em.createQuery("FROM Funcao WHERE nome = :nomeParam").setParameter("nomeParam", nome).getResultList();
+		List<Funcao> Funcao = em.createQuery("FROM Funcao WHERE funcnome = :nomeParam").setParameter("nomeParam", nome).getResultList();
 		return Funcao.size() == 1 ? Funcao.get(0) : null;
 	}
 	
@@ -38,8 +38,7 @@ public class DAOFuncaoJPA implements DAOFuncao{
 		
 		object = new DAOUnidadeGestoraJPA().recuperaPorNome(unidadeGestora);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		return em.createQuery("FROM Funcao WHERE unidadeGestora = :unidadeGestoraParam").setParameter("unidadeGestoraParam", object).getResultList();
-		//return Funcaos.size() == 1 ? Funcaos.get(0) : null;
+		return em.createQuery("FROM Funcao WHERE unigestcod = :unidadeGestoraParam").setParameter("unidadeGestoraParam", object.getId()).getResultList();
 	}
 
 }
