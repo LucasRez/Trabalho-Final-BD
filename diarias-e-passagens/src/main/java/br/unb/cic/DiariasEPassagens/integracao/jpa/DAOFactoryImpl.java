@@ -7,7 +7,7 @@ import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
-import br.unb.cic.DiariasEPassagens.integracao.DAOTrabalhoArtistico;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
 
 /**
@@ -23,8 +23,8 @@ public class DAOFactoryImpl extends DAOFactory {
 	}
 
 	@Override
-	public DAOTrabalhoArtistico createDAOTrabalhoArtistico() {
-		return new DAOTrabalhoArtisticoJPA();
+	public DAOFuncao createDAOTrabalhoArtistico() {
+		return new DAOFuncaoJPA();
 	}
 
 	@Override

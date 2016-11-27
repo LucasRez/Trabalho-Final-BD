@@ -9,7 +9,7 @@ import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
-import br.unb.cic.DiariasEPassagens.integracao.DAOTrabalhoArtistico;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFactory.DataBase;
 
@@ -23,7 +23,7 @@ import br.unb.cic.DiariasEPassagens.integracao.DAOFactory.DataBase;
 public class IMDBFacade {
 	
 	private DAOUnidadeGestora daoGenero;
-	private DAOTrabalhoArtistico daoTrabalhoArtistico;
+	private DAOFuncao daoTrabalhoArtistico;
 	private DAOFavorecido daoFilme;
 	private DAOFaixaMusical daoFaixaMusical;
 	private DAOAutor daoAutor;
@@ -116,7 +116,7 @@ public class IMDBFacade {
 		return daoTrabalhoArtistico.recuperarPorAutor(autor);
 	}
 	
-	public void setDaoTrabalhoArtistico(DAOTrabalhoArtistico daoTrabalhoArtistico) {
+	public void setDaoTrabalhoArtistico(DAOFuncao daoTrabalhoArtistico) {
 		this.daoTrabalhoArtistico = daoTrabalhoArtistico;
 	}
 	
