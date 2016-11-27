@@ -1,7 +1,7 @@
 package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
 import br.unb.cic.DiariasEPassagens.integracao.DAOAlbumMusical;
-import br.unb.cic.DiariasEPassagens.integracao.DAOAutor;
+import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOAvaliacao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
@@ -38,8 +38,8 @@ public class DAOFactoryImpl extends DAOFactory {
 	}
 
 	@Override
-	public DAOAutor createDAOAutor() {
-		return new DAOAutorJPA();
+	public DAOSubFuncao createDAOAutor() {
+		return new DAOSubFuncaoJPA();
 	}
 
 	@Override

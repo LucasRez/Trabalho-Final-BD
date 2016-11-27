@@ -81,7 +81,7 @@ public class DAOAlbumMusicalJPA implements DAOAlbumMusical{
 
 	public List<AlbumMusical> recuperaAlbunsPorAutor(String autor) {
 		Autor object;
-		object = new DAOAutorJPA().recuperaPorNome(autor);
+		object = new DAOSubFuncaoJPA().recuperaPorNome(autor);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
 
 		return em.createQuery("FROM AlbumMusical WHERE autor = :autorParam").setParameter("autorParam", object).getResultList();

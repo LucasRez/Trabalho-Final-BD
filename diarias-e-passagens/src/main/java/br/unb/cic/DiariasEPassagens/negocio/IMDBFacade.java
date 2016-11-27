@@ -3,7 +3,7 @@ package br.unb.cic.DiariasEPassagens.negocio;
 import java.util.List;
 
 import br.unb.cic.DiariasEPassagens.integracao.DAOAlbumMusical;
-import br.unb.cic.DiariasEPassagens.integracao.DAOAutor;
+import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOAvaliacao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
@@ -26,7 +26,7 @@ public class IMDBFacade {
 	private DAOFuncao daoTrabalhoArtistico;
 	private DAOFavorecido daoFilme;
 	private DAOFaixaMusical daoFaixaMusical;
-	private DAOAutor daoAutor;
+	private DAOSubFuncao daoAutor;
 	private DAOAlbumMusical daoAlbumMusical;
 	private DAOUsuario daoUsuario;
 	private DAOAvaliacao daoAvaliacao;
@@ -207,7 +207,7 @@ public class IMDBFacade {
 		return daoAutor.recuperaAutoresPorTrabalhoArtistico(trabalho);
 	}
 	
-	public void setDaoAutor(DAOAutor daoAutor) {
+	public void setDaoAutor(DAOSubFuncao daoAutor) {
 		this.daoAutor = daoAutor;
 	}
 	
