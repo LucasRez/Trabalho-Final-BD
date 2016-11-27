@@ -23,12 +23,13 @@ public abstract class DAOFactory {
 		return instance;
 	}
 	
-	public abstract DAOUnidadeGestora createDAOGenero();
-	public abstract DAOFuncao createDAOTrabalhoArtistico();
-	public abstract DAOFavorecido createDAOFilme();
-	public abstract DAOFaixaMusical createDAOFaixaMusical();
-	public abstract DAOSubFuncao createDAOAutor();
+	public abstract DAOUnidadeGestora createDAOUnidadeGestora();
+	public abstract DAOFuncao createDAOFuncao();
+	public abstract DAOFavorecido createDAOFavorecido();
+	public abstract DAOPagamento createDAOPagamento();
+	public abstract DAOSubFuncao createDAOSubFuncao();
 	public abstract DAOAcao createDAOAcao();
-	public abstract DAOUsuario createDAOUsuario();
-	public abstract DAOAvaliacao createDAOAvaliacao();
+	public abstract DAOOrgaoSubordinado createDAOOrgaoSubordinado();
+	public abstract DAOOrgaoSuperior createDAOOrgaoSuperior();
+	public abstract DAOPrograma  createDAOPrograma();
 }

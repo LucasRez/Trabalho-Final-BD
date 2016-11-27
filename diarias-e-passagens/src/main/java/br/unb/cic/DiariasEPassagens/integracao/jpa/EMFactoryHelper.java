@@ -3,19 +3,13 @@ package br.unb.cic.DiariasEPassagens.integracao.jpa;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-/**
- * Padrao recorrente para obter entity managers 
- * em aplicacoes que usam o Hibernate. 
- * 
- * @author rbonifacio
- */
 public class EMFactoryHelper {
 
     private EntityManagerFactory factory;
     private static EMFactoryHelper instance;
     
     private EMFactoryHelper() {
-       factory = Persistence.createEntityManagerFactory("imdb");
+       factory = Persistence.createEntityManagerFactory("DiariasEPassagens");
     }
     
     public static EMFactoryHelper instance() {
