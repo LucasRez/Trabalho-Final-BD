@@ -20,8 +20,8 @@ public class DAOOrgaoSuperiorJPA implements DAOOrgaoSuperior{
 	@Override
 	public OrgaoSuperior recuperaPorNome(String Nome) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<OrgaoSuperior> OrgaoSuperiors = em.createQuery("FROM OrgaoSuperior WHERE Nome = :NomeParam").setParameter("NomeParam", Nome).getResultList();
-		return OrgaoSuperiors.size() == 1 ? OrgaoSuperiors.get(0) : null;
+		List<OrgaoSuperior> OrgaoSuperiores = em.createQuery("FROM OrgaoSuperior WHERE Nome = :NomeParam").setParameter("NomeParam", Nome).getResultList();
+		return OrgaoSuperiores.size() == 1 ? OrgaoSuperiores.get(0) : null;
 	}
 	
 	@Override

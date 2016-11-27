@@ -1,17 +1,5 @@
 package br.unb.cic.DiariasEPassagens.integracao;
 
-/**
- * Um <i>abstract factory</i> para data access 
- * objects. Consultar a referencia em: 
- * 
- * https://en.wikipedia.org/wiki/Abstract_factory_pattern
- * 
- * Note que sempre eh possivel substituir abstract factories 
- * por injecao de dependencia. Uma alternativa mais flexivel, 
- * por outro lado que requer um maior grau de configuracao. 
- * 
- * @author rbonifacio
- */
 public abstract class DAOFactory {
 	
 	public enum DataBase {
@@ -20,10 +8,8 @@ public abstract class DAOFactory {
 		COUCHDB
 	}; 
 	
-	/* essa eh uma classe singleton */
-	private static DAOFactory instance;
 	
-	/* construtor privado, eh um singleton! */
+	private static DAOFactory instance;
 	protected DAOFactory() {} 
 		
 	public static DAOFactory instance(DataBase impl) {
@@ -42,7 +28,7 @@ public abstract class DAOFactory {
 	public abstract DAOFavorecido createDAOFilme();
 	public abstract DAOFaixaMusical createDAOFaixaMusical();
 	public abstract DAOSubFuncao createDAOAutor();
-	public abstract DAOAcao createDAOAlbumMusical();
+	public abstract DAOAcao createDAOAcao();
 	public abstract DAOUsuario createDAOUsuario();
 	public abstract DAOAvaliacao createDAOAvaliacao();
 }
