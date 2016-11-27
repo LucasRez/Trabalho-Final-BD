@@ -72,8 +72,10 @@ CREATE TABLE Pagamento
   PagamGestCod INTEGER NOT NULL,
   FavorecidoCPF char(14) NOT NULL,
   FavorecidoID serial,
+  AcaoCod varchar(20),
   PRIMARY KEY (FavorecidoID),
   FOREIGN KEY (FavorecidoID, FavorecidoCPF) REFERENCES Favorecido(FavorecidoID, FavorecidoCPF),
+  FOREIGN KEY (AcaoCod) REFERENCES Acao(AcaoCod),
   unique(PagamCod, FavorecidoID)
 );
 
@@ -151,8 +153,8 @@ select distinct on (CodAcao) CodAcao, NomeAcao, LingCidada, CodProg from tab_tem
 insert into Favorecido (FavorecidoCPF, FavorecidoNome, UniGestCod)
 select CPFFav, NomeFav, CodUniGest from tab_temp;
 
-insert into Pagamento (FavorecidoCPF, PagamData, PagamValor, PagamGestCod, PagamCod)
-select CPFFav, DataPagam, ValorPagam, GestPagam, CodPagam from tab_temp;
+insert into Pagamento (FavorecidoCPF, PagamData, PagamValor, PagamGestCod, PagamCod, AcaoCod)
+select CPFFav, DataPagam, ValorPagam, GestPagam, CodPagam, CodAcao from tab_temp;
 
 insert into Exerce (UniGestCod, FuncCod)
 select distinct on (CodUniGest) CodUniGest, CodFunc from tab_temp order by CodUniGest, CodFunc;
