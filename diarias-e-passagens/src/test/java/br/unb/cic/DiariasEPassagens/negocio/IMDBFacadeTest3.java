@@ -1,6 +1,6 @@
 package br.unb.cic.DiariasEPassagens.negocio;
 
-import br.unb.cic.DiariasEPassagens.negocio.Autor;
+import br.unb.cic.DiariasEPassagens.entidades.Autor;
 import br.unb.cic.DiariasEPassagens.negocio.Filme;
 import br.unb.cic.DiariasEPassagens.negocio.Genero;
 import br.unb.cic.DiariasEPassagens.negocio.IMDBFacade;
@@ -12,17 +12,17 @@ public class IMDBFacadeTest3 extends TestCase {
 	public void testeAdicionaFilme() {
 		try {
 			IMDBFacade facade = ContextoID.instance().facade();
-			Genero novoGenero = new Genero("Fantasia","Você vai se encantar");
-			Autor novoAutor = new Autor("Marc Forster","é um diretor de cinema  suíço-alemão");
+			Genero novoGenero = new Genero("Fantasia","Vocï¿½ vai se encantar");
+			Autor novoAutor = new Autor("Marc Forster","ï¿½ um diretor de cinema  suï¿½ï¿½o-alemï¿½o");
 			
-			   Filme novoFilme = new Filme("Mais estranho que a ficção",2007,novoGenero,novoAutor,105);
+			   Filme novoFilme = new Filme("Mais estranho que a ficï¿½ï¿½o",2007,novoGenero,novoAutor,105);
 			
 			   int quantidadeFilmes = facade.recuperarFilme().size();
 			   
 			   facade.adicionaGenero(novoGenero);
 			   facade.adicionaAutor(novoAutor);
 			   facade.adicionaFilme(novoFilme);
-			   Filme resultadoConsulta = facade.recuperarFilmePorTitulo("Mais estranho que a ficção");
+			   Filme resultadoConsulta = facade.recuperarFilmePorTitulo("Mais estranho que a ficï¿½ï¿½o");
 			   assertEquals(quantidadeFilmes+1, facade.recuperarFilme().size());
 			   assertNotNull(resultadoConsulta);	
 		}

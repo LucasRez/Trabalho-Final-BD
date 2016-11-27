@@ -1,14 +1,37 @@
 package br.unb.cic.DiariasEPassagens.entidades;
 
+import java.util.ArrayList;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
 public class SubFuncao {
 
+	@Id
+	@Column(name="subfunccod")
 	private int id;
 	
+	@Column(name="subfuncnome")
 	private String nome;
-
-	public SubFuncao(int id, String nome) {
+	
+	@ManyToMany(mappedBy="subFuncoes")
+	private ArrayList<Funcao> funcoes;
+ 
+	public SubFuncao(int id, String nome, ArrayList<Funcao> funcoes) {
+		super();
 		this.id = id;
 		this.nome = nome;
+		this.funcoes = funcoes;
+	}
+
+	public ArrayList<Funcao> getFuncoes() {
+		return funcoes;
+	}
+
+	public void setFuncoes(ArrayList<Funcao> funcoes) {
+		this.funcoes = funcoes;
 	}
 
 	public int getId() {

@@ -2,16 +2,18 @@ package br.unb.cic.DiariasEPassagens.negocio;
 
 import java.util.List;
 
+import br.unb.cic.DiariasEPassagens.entidades.AlbumMusical;
+import br.unb.cic.DiariasEPassagens.entidades.Autor;
 import br.unb.cic.DiariasEPassagens.integracao.DAOAcao;
-import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOAvaliacao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
+import br.unb.cic.DiariasEPassagens.integracao.DAOFactory.DataBase;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
-import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFuncao;
+import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
+import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
-import br.unb.cic.DiariasEPassagens.integracao.DAOFactory.DataBase;
 
 /**
  * Classe de fachada (Facade class) que vai servir de comunicacao 

@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import br.unb.cic.DiariasEPassagens.entidades.AlbumMusical;
 import br.unb.cic.DiariasEPassagens.negocio.*;
 @Entity
 public class Avaliacao {

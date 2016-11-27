@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import br.unb.cic.DiariasEPassagens.entidades.Autor;
+
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "TB_TRABALHO_ARTISTICO")

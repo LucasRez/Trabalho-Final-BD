@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import br.unb.cic.DiariasEPassagens.cadastro.Cadastro;
-import br.unb.cic.DiariasEPassagens.negocio.AlbumMusical;
-import br.unb.cic.DiariasEPassagens.negocio.Autor;
+import br.unb.cic.DiariasEPassagens.entidades.AlbumMusical;
+import br.unb.cic.DiariasEPassagens.entidades.Autor;
 import br.unb.cic.DiariasEPassagens.negocio.Avaliacao;
 import br.unb.cic.DiariasEPassagens.negocio.FaixaMusical;
 import br.unb.cic.DiariasEPassagens.negocio.Filme;
@@ -21,11 +21,11 @@ public abstract class TelasDeInteracao {
 		Scanner input = new Scanner(System.in);
 		
 		System.out.println("___________________SEJA BEM-VINDO AO PROGRAMA IMDB_____________________");
-		System.out.println("_______________Você possui cadastro em nosso programa?_________________");
-		System.out.println("____Digite o número correspondente à sua resposta e pressione Enter____");
+		System.out.println("_______________Vocï¿½ possui cadastro em nosso programa?_________________");
+		System.out.println("____Digite o nï¿½mero correspondente ï¿½ sua resposta e pressione Enter____");
 		System.out.println("_______________________________________________________________________");
 		System.out.println("______________________________1.SIM____________________________________");
-		System.out.println("______________________________2.NÃO____________________________________");		
+		System.out.println("______________________________2.Nï¿½O____________________________________");		
 		System.out.println("_______________________________________________________________________");
 		
 		Resposta = input.nextInt();
@@ -39,9 +39,9 @@ public abstract class TelasDeInteracao {
 				telaDesejaCadastro();
 				flag = false;
 			}else{
-				System.out.println("_________________________Entrada Inválida______________________________");
+				System.out.println("_________________________Entrada Invï¿½lida______________________________");
 				System.out.println("_______________________________________________________________________");
-				System.out.println("_Por favor,digite o número 1 se você tiver cadastro e 2 caso não tenha_");
+				System.out.println("_Por favor,digite o nï¿½mero 1 se vocï¿½ tiver cadastro e 2 caso nï¿½o tenha_");
 				Resposta = input.nextInt();
 				flag = true;
 			}
@@ -57,7 +57,7 @@ public abstract class TelasDeInteracao {
 		System.out.println("_______________________________________________________________________");
 		System.out.println("_______________________Deseja Cadastrar-se?____________________________");
 		System.out.println("______________________________1.SIM____________________________________");
-		System.out.println("_____________________2.NÃO(Sair do Programa)___________________________");		
+		System.out.println("_____________________2.Nï¿½O(Sair do Programa)___________________________");		
 		System.out.println("_______________________________________________________________________");
 		Resposta = input.nextInt();
 		
@@ -71,9 +71,9 @@ public abstract class TelasDeInteracao {
 			}else{
 				System.out.println("_______________________________________________________________________");
 				System.out.println("_______________________________________________________________________");
-				System.out.println("_________________________Entrada Inválida______________________________");
+				System.out.println("_________________________Entrada Invï¿½lida______________________________");
 				System.out.println("_______________________________________________________________________");
-				System.out.println("__Por favor,digite o número 1 caso queira se cadastrar e 2 para sair___");
+				System.out.println("__Por favor,digite o nï¿½mero 1 caso queira se cadastrar e 2 para sair___");
 				Resposta = input.nextInt();
 				flag = true;
 			}
@@ -101,7 +101,7 @@ public abstract class TelasDeInteracao {
 		senhaDeAcesso = input.nextLine();
 		
 		Cadastro cadastro = new Cadastro(nomeCompleto,dataDeNascimento,login,senhaDeAcesso);
-		//TO-DO VALIDAÇÃO
+		//TO-DO VALIDAï¿½ï¿½O
 	}
 	
 	static void telaDeLogin(){
@@ -111,7 +111,7 @@ public abstract class TelasDeInteracao {
 		Scanner input = new Scanner(System.in);
 		
 		System.out.println("_______________________________________________________________________");
-		System.out.println("_________________________Digite o seu usuário__________________________");
+		System.out.println("_________________________Digite o seu usuï¿½rio__________________________");
 		login = input.nextLine();
 		
 		System.out.println("_______________________________________________________________________");
@@ -127,8 +127,8 @@ public abstract class TelasDeInteracao {
 				System.out.println("_______________________________________________________________________");
 				System.out.println("_______________________________________________________________________");
 				System.out.println("_______________________________________________________________________");
-				System.out.println("____________________Senha e Usuários incorretos________________________");
-				System.out.println("__________________Digite o seu usuário novamente_______________________");
+				System.out.println("____________________Senha e Usuï¿½rios incorretos________________________");
+				System.out.println("__________________Digite o seu usuï¿½rio novamente_______________________");
 				login = input.nextLine();
 				
 				System.out.println("_______________________________________________________________________");
@@ -151,7 +151,7 @@ public abstract class TelasDeInteracao {
 		do{
 			System.out.println("_______________________________________________________________________");
 			System.out.println("_______________________________________________________________________");
-			System.out.printf("@@@@@@@@@@@@@@@@@@Você está conectado como %s @@@@@@@@@@@@@@@@@\n",login);
+			System.out.printf("@@@@@@@@@@@@@@@@@@Vocï¿½ estï¿½ conectado como %s @@@@@@@@@@@@@@@@@\n",login);
 			System.out.println("_______________________________________________________________________");
 			System.out.println("__________________________O que deseja fazer___________________________");
 			System.out.println("_______________________________________________________________________");
@@ -174,7 +174,7 @@ public abstract class TelasDeInteracao {
 				case 3:
 					String autor;
 					System.out.println("_______________________________________________________________________");
-					System.out.println("_____________________Digite o autor que você deseja____________________");
+					System.out.println("_____________________Digite o autor que vocï¿½ deseja____________________");
 					System.out.println("_______________________________________________________________________");
 					autor = input.nextLine();
 					if(facade.recuperarAutorPorNome(autor)!=null){
@@ -183,8 +183,8 @@ public abstract class TelasDeInteracao {
 						flag = true;
 					}else{
 						System.out.println("_______________________________________________________________________");
-						System.out.println("____________Autor não encontrado em nosso banco de dados_______________");
-						System.out.println("__Tente realizar outra operação ou procurar por um autor diferente )___");
+						System.out.println("____________Autor nï¿½o encontrado em nosso banco de dados_______________");
+						System.out.println("__Tente realizar outra operaï¿½ï¿½o ou procurar por um autor diferente )___");
 						System.out.println("_______________________________________________________________________");
 						flag = false;
 					}
@@ -206,12 +206,12 @@ public abstract class TelasDeInteracao {
 		do{
 			System.out.println("_______________________________________________________________________");
 			System.out.println("_______________________________________________________________________");
-			System.out.printf("@@@@@@@@@@@@@@@@@@Você está conectado como %s @@@@@@@@@@@@@@@@@@@\n",login);
+			System.out.printf("@@@@@@@@@@@@@@@@@@Vocï¿½ estï¿½ conectado como %s @@@@@@@@@@@@@@@@@@@\n",login);
 			System.out.println("_______________________________________________________________________");
 			System.out.println("__________________________O que deseja fazer___________________________");
 			System.out.println("_______________________________________________________________________");
 			System.out.println("__________________1.Procurar um Filme pelo nome________________________");
-			System.out.println("______________2.Procurar uma lista de filmes por gênero________________");
+			System.out.println("______________2.Procurar uma lista de filmes por gï¿½nero________________");
 			System.out.println("______________3.Procurar uma lista de filmes por autor_________________");
 			System.out.println("_______________________________________________________________________");
 			opcao = input.nextInt();
@@ -220,7 +220,7 @@ public abstract class TelasDeInteracao {
 			switch(opcao){
 			case 1: //Done
 				System.out.println("_______________________________________________________________________");
-				System.out.println("____________Digite o nome do filme que você deseja procurar____________");
+				System.out.println("____________Digite o nome do filme que vocï¿½ deseja procurar____________");
 				System.out.println("_______________________________________________________________________");
 				nomeDoFilme = input.nextLine();
 				
@@ -229,8 +229,8 @@ public abstract class TelasDeInteracao {
 					telaOperacaoFilme(facade.recuperarFilmePorTitulo(nomeDoFilme),login);					
 				}else{
 				System.out.println("_______________________________________________________________________");
-				System.out.println("___________Filme não encontrado em nosso banco de dados________________");
-				System.out.println("___Tente realizar outra operação ou procurar por um nome diferente ____");
+				System.out.println("___________Filme nï¿½o encontrado em nosso banco de dados________________");
+				System.out.println("___Tente realizar outra operaï¿½ï¿½o ou procurar por um nome diferente ____");
 				System.out.println("_______________________________________________________________________");
 				flag = false;
 				}
@@ -238,22 +238,22 @@ public abstract class TelasDeInteracao {
 			case 2:
 				String genero;
 				System.out.println("_______________________________________________________________________");
-				System.out.println("____________________Digite o gênero que você deseja____________________");
+				System.out.println("____________________Digite o gï¿½nero que vocï¿½ deseja____________________");
 				System.out.println("_______________________________________________________________________");
 				genero = input.nextLine();
 				if(facade.recuperarPorTitulo(genero)!=null){
 					flag = true;
 					List<Filme> listaDeFilmes = facade.recuperarFilmePorGenero(genero);
 					
-					System.out.println("Os filmes com esse gênero são os seguintes:\n");
+					System.out.println("Os filmes com esse gï¿½nero sï¿½o os seguintes:\n");
 					for(Filme object : listaDeFilmes){
-						System.out.println("Título: " + object.getTitulo());
+						System.out.println("Tï¿½tulo: " + object.getTitulo());
 					}
 					telaPosLogin(login);
 				}else{
 					System.out.println("_______________________________________________________________________");
-					System.out.println("___________Gênero não encontrado em nosso banco de dados_______________");
-					System.out.println("__Tente realizar outra operação ou procurar por um gênero diferente ___");
+					System.out.println("___________Gï¿½nero nï¿½o encontrado em nosso banco de dados_______________");
+					System.out.println("__Tente realizar outra operaï¿½ï¿½o ou procurar por um gï¿½nero diferente ___");
 					System.out.println("_______________________________________________________________________");
 					flag = false;
 				}
@@ -261,22 +261,22 @@ public abstract class TelasDeInteracao {
 			case 3:
 				String autor;
 				System.out.println("_______________________________________________________________________");
-				System.out.println("_____________________Digite o autor que você deseja____________________");
+				System.out.println("_____________________Digite o autor que vocï¿½ deseja____________________");
 				System.out.println("_______________________________________________________________________");
 				autor = input.nextLine();
 				if(facade.recuperarAutorPorNome(autor)!=null){
 					flag = true;
 					List<Filme> listaDeFilmes = facade.recuperarFilmePorAutor(autor);
-					System.out.println("Esse autor já produziu os seguintes filmes:");
+					System.out.println("Esse autor jï¿½ produziu os seguintes filmes:");
 					for(Filme object : listaDeFilmes){
-						System.out.println("Título: " + object.getTitulo());
+						System.out.println("Tï¿½tulo: " + object.getTitulo());
 					}
 					telaPosLogin(login);
 					
 				}else{
 					System.out.println("_______________________________________________________________________");
-					System.out.println("____________Autor não encontrado em nosso banco de dados_______________");
-					System.out.println("__Tente realizar outra operação ou procurar por um autor diferente )___");
+					System.out.println("____________Autor nï¿½o encontrado em nosso banco de dados_______________");
+					System.out.println("__Tente realizar outra operaï¿½ï¿½o ou procurar por um autor diferente )___");
 					System.out.println("_______________________________________________________________________");
 					flag = false;
 				}
@@ -287,7 +287,7 @@ public abstract class TelasDeInteracao {
 		}while(flag == false);
 	}
 	
-	//TO-DO ADICIONAR AVALIAÇÃO E OPÇÂO COMENTARIOS
+	//TO-DO ADICIONAR AVALIAï¿½ï¿½O E OPï¿½ï¿½O COMENTARIOS
 	static void telaOperacaoFilme(Filme filme,String login){
 		int opcao;
 		boolean flag = false;
@@ -296,19 +296,19 @@ public abstract class TelasDeInteracao {
 		IMDBFacade facade = ContextoID.instance().facade();
 		do{
 			System.out.println("_______________________________________________________________________");
-			System.out.printf("@@@@@@@@@@@@@@@@@@Você está conectado como %s @@@@@@@@@@@@@@@@@@@\n",login);
+			System.out.printf("@@@@@@@@@@@@@@@@@@Vocï¿½ estï¿½ conectado como %s @@@@@@@@@@@@@@@@@@@\n",login);
 			System.out.println("_______________________________________________________________________");
 			System.out.println("_______________________________________________________________________");
-			System.out.printf("Você selecionou o filme %s \n",filme.getTitulo());
-			System.out.printf("O filme é do ano %d \n",filme.getAno());
-			System.out.printf("O nome do autor responsável pelo filme é %s \n",filme.getAutor().getNome());
-			System.out.printf("A duração do filme é %d minutos  \n",filme.getDuracao());
+			System.out.printf("Vocï¿½ selecionou o filme %s \n",filme.getTitulo());
+			System.out.printf("O filme ï¿½ do ano %d \n",filme.getAno());
+			System.out.printf("O nome do autor responsï¿½vel pelo filme ï¿½ %s \n",filme.getAutor().getNome());
+			System.out.printf("A duraï¿½ï¿½o do filme ï¿½ %d minutos  \n",filme.getDuracao());
 			System.out.println("_______________________________________________________________________");
 			System.out.println("__________________________O que deseja fazer___________________________");
 			System.out.println("_______________________________________________________________________");
 			System.out.println("__________________________1.Avaliar o filme____________________________");
-			System.out.println("______________________2.Ver comentários do filme________________________");
-			System.out.println("________________________3.Voltar à tela inicial________________________");
+			System.out.println("______________________2.Ver comentï¿½rios do filme________________________");
+			System.out.println("________________________3.Voltar ï¿½ tela inicial________________________");
 			System.out.println("___________________________4.Sair do programa__________________________");
 			System.out.println("_______________________________________________________________________");
 			System.out.println("_______________________________________________________________________");
@@ -322,20 +322,20 @@ public abstract class TelasDeInteracao {
 					Boolean flag1 = false;
 					do{
 						System.out.println("_______________________________________________________________________");
-						System.out.println("___________Digite a sua nota de 1 a 5(números inteiros)________________");
+						System.out.println("___________Digite a sua nota de 1 a 5(nï¿½meros inteiros)________________");
 						System.out.println("_______________________________________________________________________");
 						nota = input.nextInt();
 						input.nextLine();
 						if(nota!= 1 && nota!= 2 && nota!=3 && nota!=4&& nota!=5){
 							flag1 = false;
-							System.out.println("_________________Valor inválido! Tente novamente_______________________");
+							System.out.println("_________________Valor invï¿½lido! Tente novamente_______________________");
 						}else{
 							flag1 = true;
 						}
 					}while(flag1 == false);
 					
 						System.out.println("_______________________________________________________________________");
-						System.out.println("_____________Digite um comentário a respeito do filme)_________________");
+						System.out.println("_____________Digite um comentï¿½rio a respeito do filme)_________________");
 						System.out.println("_______________________________________________________________________");
 						comentario = input.nextLine();
 						
@@ -350,7 +350,7 @@ public abstract class TelasDeInteracao {
 					break;
 				case 2:
 					List<Avaliacao> avaliacoes = facade.recuperarAvaliacoesPorFilme(filme.getTitulo());
-					System.out.println("As avaliações desse filme são as seguintes:");
+					System.out.println("As avaliaï¿½ï¿½es desse filme sï¿½o as seguintes:");
 					for(Avaliacao comentarios : avaliacoes){
 						System.out.println("-" + comentarios.getComentario());
 					}
@@ -382,12 +382,12 @@ public abstract class TelasDeInteracao {
 		do{
 			System.out.println("_______________________________________________________________________");
 			System.out.println("_______________________________________________________________________");
-			System.out.printf("@@@@@@@@@@@@@@@@@@Você está conectado como %s @@@@@@@@@@@@@@@@@@@\n",login);
+			System.out.printf("@@@@@@@@@@@@@@@@@@Vocï¿½ estï¿½ conectado como %s @@@@@@@@@@@@@@@@@@@\n",login);
 			System.out.println("_______________________________________________________________________");
 			System.out.println("__________________________O que deseja fazer___________________________");
 			System.out.println("_______________________________________________________________________");
 			System.out.println("________________1.Procurar um Album Musical pelo nome__________________");
-			System.out.println("_________2.Procurar uma lista de albuns musicais por gênero____________");
+			System.out.println("_________2.Procurar uma lista de albuns musicais por gï¿½nero____________");
 			System.out.println("_________3.Procurar uma lista de albuns musicais por autor_____________");
 			System.out.println("_______________________________________________________________________");
 			opcao = input.nextInt();
@@ -396,7 +396,7 @@ public abstract class TelasDeInteracao {
 			switch(opcao){
 			case 1: //Done
 				System.out.println("_______________________________________________________________________");
-				System.out.println("________Digite o nome do Album Musical que você deseja procurar________");
+				System.out.println("________Digite o nome do Album Musical que vocï¿½ deseja procurar________");
 				System.out.println("_______________________________________________________________________");
 				nomeDoAlbum = input.nextLine();
 				
@@ -405,8 +405,8 @@ public abstract class TelasDeInteracao {
 					telaOperacaoAlbum(facade.recuperarAlbumMusicalPorTitulo(nomeDoAlbum),login);					
 				}else{
 				System.out.println("_______________________________________________________________________");
-				System.out.println("_________Album Musical não encontrado em nosso banco de dados__________");
-				System.out.println("___Tente realizar outra operação ou procurar por um nome diferente ____");
+				System.out.println("_________Album Musical nï¿½o encontrado em nosso banco de dados__________");
+				System.out.println("___Tente realizar outra operaï¿½ï¿½o ou procurar por um nome diferente ____");
 				System.out.println("_______________________________________________________________________");
 				flag = false;
 				}
@@ -414,22 +414,22 @@ public abstract class TelasDeInteracao {
 			case 2:
 				String genero;
 				System.out.println("_______________________________________________________________________");
-				System.out.println("____________________Digite o gênero que você deseja____________________");
+				System.out.println("____________________Digite o gï¿½nero que vocï¿½ deseja____________________");
 				System.out.println("_______________________________________________________________________");
 				genero = input.nextLine();
 				if(facade.recuperarPorTitulo(genero)!=null){
 					flag = true;
 					List<AlbumMusical> listaDeAlbuns = facade.recuperarAlbunsMusicalPorGenero(genero);
-					System.out.println("Albuns Musicais com o Gênero desejado:\n");
+					System.out.println("Albuns Musicais com o Gï¿½nero desejado:\n");
 					for(AlbumMusical albuns : listaDeAlbuns){
-						System.out.println("Título: " + albuns.getTitulo());
+						System.out.println("Tï¿½tulo: " + albuns.getTitulo());
 					}
 					telaPosLogin(login);
 					
 				}else{
 					System.out.println("_______________________________________________________________________");
-					System.out.println("___________Gênero não encontrado em nosso banco de dados_______________");
-					System.out.println("__Tente realizar outra operação ou procurar por um gênero diferente ___");
+					System.out.println("___________Gï¿½nero nï¿½o encontrado em nosso banco de dados_______________");
+					System.out.println("__Tente realizar outra operaï¿½ï¿½o ou procurar por um gï¿½nero diferente ___");
 					System.out.println("_______________________________________________________________________");
 					flag = false;
 				}
@@ -437,7 +437,7 @@ public abstract class TelasDeInteracao {
 			case 3:
 				String autor;
 				System.out.println("_______________________________________________________________________");
-				System.out.println("_____________________Digite o autor que você deseja____________________");
+				System.out.println("_____________________Digite o autor que vocï¿½ deseja____________________");
 				System.out.println("_______________________________________________________________________");
 				autor = input.nextLine();
 				if(facade.recuperarAutorPorNome(autor)!=null){
@@ -445,15 +445,15 @@ public abstract class TelasDeInteracao {
 					
 					System.out.printf("Albuns musicais com o autor %s: \n", autor);
 					for(AlbumMusical albuns : listaDeAlbuns){
-						System.out.println("Título: " + albuns.getTitulo());
+						System.out.println("Tï¿½tulo: " + albuns.getTitulo());
 					}
 					
 					flag = true;
 					telaPosLogin(login);
 				}else{
 					System.out.println("_______________________________________________________________________");
-					System.out.println("____________Autor não encontrado em nosso banco de dados_______________");
-					System.out.println("__Tente realizar outra operação ou procurar por um autor diferente )___");
+					System.out.println("____________Autor nï¿½o encontrado em nosso banco de dados_______________");
+					System.out.println("__Tente realizar outra operaï¿½ï¿½o ou procurar por um autor diferente )___");
 					System.out.println("_______________________________________________________________________");
 					flag = false;
 				}
@@ -476,17 +476,17 @@ public abstract class TelasDeInteracao {
 		
 		do{
 			System.out.println("_______________________________________________________________________");
-			System.out.printf("@@@@@@@@@@@@@@@@@@Você está conectado como %s @@@@@@@@@@@@@@@@@@@\n",login);
+			System.out.printf("@@@@@@@@@@@@@@@@@@Vocï¿½ estï¿½ conectado como %s @@@@@@@@@@@@@@@@@@@\n",login);
 			System.out.println("_______________________________________________________________________");
 			System.out.println("_______________________________________________________________________");
-			System.out.printf("Você selecionou o album musical %s \n",album.getTitulo());
-			System.out.printf("O album musical é do ano %d \n",album.getAno());
-			System.out.printf("O nome do autor responsável pelo album musical é %s \n",album.getAutor().getNome());
-			System.out.printf("A lista de músicas presentes no album são:\n");
+			System.out.printf("Vocï¿½ selecionou o album musical %s \n",album.getTitulo());
+			System.out.printf("O album musical ï¿½ do ano %d \n",album.getAno());
+			System.out.printf("O nome do autor responsï¿½vel pelo album musical ï¿½ %s \n",album.getAutor().getNome());
+			System.out.printf("A lista de mï¿½sicas presentes no album sï¿½o:\n");
 			for(FaixaMusical faixa : listaDeFaixas){
-				System.out.println("Título: " + faixa.getTitulo());
+				System.out.println("Tï¿½tulo: " + faixa.getTitulo());
 			}
-			System.out.printf("A avaliação do album é:");
+			System.out.printf("A avaliaï¿½ï¿½o do album ï¿½:");
 			List<Avaliacao> notas = facade.recuperarAvaliacoesPorAlbum(album.getTitulo());
 			
 			for(Avaliacao avaliacoezinhas : notas){
@@ -498,8 +498,8 @@ public abstract class TelasDeInteracao {
 			System.out.println("__________________________O que deseja fazer___________________________");
 			System.out.println("_______________________________________________________________________");
 			System.out.println("______________________1.Avaliar o album musical________________________");
-			System.out.println("__________________2.Ver comentários do album musical___________________");
-			System.out.println("________________________3.Voltar à tela inicial________________________");
+			System.out.println("__________________2.Ver comentï¿½rios do album musical___________________");
+			System.out.println("________________________3.Voltar ï¿½ tela inicial________________________");
 			System.out.println("___________________________4.Sair do programa__________________________");
 			System.out.println("_______________________________________________________________________");
 			System.out.println("_______________________________________________________________________");
@@ -513,20 +513,20 @@ public abstract class TelasDeInteracao {
 					Boolean flag1 = false;
 					do{
 						System.out.println("_______________________________________________________________________");
-						System.out.println("___________Digite a sua nota de 1 a 5(números inteiros)________________");
+						System.out.println("___________Digite a sua nota de 1 a 5(nï¿½meros inteiros)________________");
 						System.out.println("_______________________________________________________________________");
 						nota = input.nextInt();
 						input.nextLine();
 						if(nota!= 1 && nota!= 2 && nota!=3 && nota!=4 && nota!=5){
 							flag1 = false;
-							System.out.println("_________________Valor inválido! Tente novamente_______________________");
+							System.out.println("_________________Valor invï¿½lido! Tente novamente_______________________");
 						}else{
 							flag1 = true;
 						}
 					}while(flag1 == false);
 					
 						System.out.println("_______________________________________________________________________");
-						System.out.println("________Digite um comentário a respeito do album musical)______________");
+						System.out.println("________Digite um comentï¿½rio a respeito do album musical)______________");
 						System.out.println("_______________________________________________________________________");
 						comentario = input.nextLine();
 
@@ -541,7 +541,7 @@ public abstract class TelasDeInteracao {
 					break;
 				case 2:
 					List<Avaliacao> avaliacoes = facade.recuperarAvaliacoesPorAlbum(album.getTitulo());
-					System.out.println("As avaliações desse album são as seguintes:");
+					System.out.println("As avaliaï¿½ï¿½es desse album sï¿½o as seguintes:");
 					for(Avaliacao comentarios : avaliacoes){
 						System.out.println("-" + comentarios.getComentario());
 					}
@@ -572,18 +572,18 @@ public abstract class TelasDeInteracao {
 		
 		System.out.println(listaDeFilmes.size());
 		System.out.println("_______________________________________________________________________");
-		System.out.printf("@@@@@@@@@@@@@@@@@@Você está conectado como %s @@@@@@@@@@@@@@@@@@@\n",login);
+		System.out.printf("@@@@@@@@@@@@@@@@@@Vocï¿½ estï¿½ conectado como %s @@@@@@@@@@@@@@@@@@@\n",login);
 		System.out.println("_______________________________________________________________________");
 		System.out.println("_______________________________________________________________________");
-		System.out.printf("Você selecionou o autor %s \n",autor.getNome());
+		System.out.printf("Vocï¿½ selecionou o autor %s \n",autor.getNome());
 		System.out.printf("Esse autor %s \n",autor.getDescricao());
-		System.out.println("Esse autor já produziu os seguintes filmes:");
+		System.out.println("Esse autor jï¿½ produziu os seguintes filmes:");
 		for(Filme filme : listaDeFilmes){
-			System.out.println("Título: " + filme.getTitulo());
+			System.out.println("Tï¿½tulo: " + filme.getTitulo());
 		}
-		System.out.println("Esse autor já produziu os seguintes albums musicais:\n");
+		System.out.println("Esse autor jï¿½ produziu os seguintes albums musicais:\n");
 		for(AlbumMusical album : listaDeAlbuns){
-			System.out.println("Título: " +  album.getTitulo());
+			System.out.println("Tï¿½tulo: " +  album.getTitulo());
 		}
 		telaPosLogin(login);
 				

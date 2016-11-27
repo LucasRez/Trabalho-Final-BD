@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import br.unb.cic.DiariasEPassagens.entidades.AlbumMusical;
+
 @Entity
 public class FaixaMusical{
 	

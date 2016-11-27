@@ -2,7 +2,7 @@ package br.unb.cic.DiariasEPassagens.negocio;
 
 
 
-import br.unb.cic.DiariasEPassagens.negocio.Autor;
+import br.unb.cic.DiariasEPassagens.entidades.Autor;
 import br.unb.cic.DiariasEPassagens.negocio.Avaliacao;
 import br.unb.cic.DiariasEPassagens.negocio.Filme;
 import br.unb.cic.DiariasEPassagens.negocio.Genero;
@@ -23,9 +23,9 @@ public class IMDBFacadeTest7 extends TestCase {
 
 			
 
-			Autor novoAutor = new Autor("Arnold Schwarzenegger", "Excelente autor e ator de Filmes de Ação");
+			Autor novoAutor = new Autor("Arnold Schwarzenegger", "Excelente autor e ator de Filmes de Aï¿½ï¿½o");
 
-			Genero novoGenero = new Genero("História","Filmes que vão despertar seu interesse no passado");
+			Genero novoGenero = new Genero("Histï¿½ria","Filmes que vï¿½o despertar seu interesse no passado");
 
 			Filme novoFilme = new Filme("Discovery a new World", 2015, novoGenero, novoAutor, 200);
 

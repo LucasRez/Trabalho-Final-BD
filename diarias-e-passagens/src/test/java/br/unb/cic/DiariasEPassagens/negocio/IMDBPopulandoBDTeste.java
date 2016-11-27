@@ -2,8 +2,8 @@ package br.unb.cic.DiariasEPassagens.negocio;
 
 
 
-import br.unb.cic.DiariasEPassagens.negocio.AlbumMusical;
-import br.unb.cic.DiariasEPassagens.negocio.Autor;
+import br.unb.cic.DiariasEPassagens.entidades.AlbumMusical;
+import br.unb.cic.DiariasEPassagens.entidades.Autor;
 import br.unb.cic.DiariasEPassagens.negocio.FaixaMusical;
 import br.unb.cic.DiariasEPassagens.negocio.Filme;
 import br.unb.cic.DiariasEPassagens.negocio.Genero;
@@ -35,13 +35,13 @@ public class IMDBPopulandoBDTeste extends TestCase {
 
 			Genero novoGenero5 = new Genero("MPB", "Musica Popular Brasileira");
 
-			Genero novoGenero6 = new Genero("Jazz", "Manifestação musical originaria de Nova Orleans EUA");
+			Genero novoGenero6 = new Genero("Jazz", "Manifestaï¿½ï¿½o musical originaria de Nova Orleans EUA");
 
 			Genero novoGenero7 = new Genero("Blues", "Forma musical marcada");
 
 			Genero novoGenero8 = new Genero("Soul", "Genero musical que nasceu do blues e do rythm");
 
-			Genero novoGenero9 = new Genero("Acao", "Adrenalina do começo ao fim!");
+			Genero novoGenero9 = new Genero("Acao", "Adrenalina do comeï¿½o ao fim!");
 
 			Genero novoGenero10 = new Genero("Aventura", "Historias de tirar o folego!");
 
@@ -57,7 +57,7 @@ public class IMDBPopulandoBDTeste extends TestCase {
 
 			Autor novoAutor1 = new Autor("Oasis", "Uma das maiores bandas dos anos 90 e do mundo!");
 
-			Autor novoAutor2 = new Autor("Queens of the Stone Age", "Josh Homme revolucionou a forma na qual o rock é feito");
+			Autor novoAutor2 = new Autor("Queens of the Stone Age", "Josh Homme revolucionou a forma na qual o rock ï¿½ feito");
 
 			Autor novoAutor3 = new Autor("Nirvana", "Uma das bandas mais influentes no meio Grunge");
 
@@ -65,7 +65,7 @@ public class IMDBPopulandoBDTeste extends TestCase {
 
 			Autor novoAutor5 = new Autor("Radiohead", "Comandado por Thom Yorke");
 
-			Autor novoAutor6 = new Autor("Stereophonics", "Banda bastante famosa na Grã-Bretanha, comandado por Kelly Jones");
+			Autor novoAutor6 = new Autor("Stereophonics", "Banda bastante famosa na Grï¿½-Bretanha, comandado por Kelly Jones");
 
 			Autor novoAutor7 = new Autor("The Libertines", "Uma das poucas bandas atuais que fizeram sucesso na Inglaterra");
 
@@ -73,13 +73,13 @@ public class IMDBPopulandoBDTeste extends TestCase {
 
 			Autor novoAutor9 = new Autor("Chris Columbus", "Melhor diretor dos filmes de Harry Potter");
 
-			Autor novoAutor10 = new Autor("Adam Sandler", "Sempre pronto para fazer você rir");
+			Autor novoAutor10 = new Autor("Adam Sandler", "Sempre pronto para fazer vocï¿½ rir");
 
 			Autor novoAutor11 = new Autor("George Lucas", "Lenda do cinema!");
 
-			Autor novoAutor12 = new Autor("Peter Jackson", "Sagrou-se um dos maiores diretores após Senhor dos Aneis");
+			Autor novoAutor12 = new Autor("Peter Jackson", "Sagrou-se um dos maiores diretores apï¿½s Senhor dos Aneis");
 
-			Autor novoAutor13 = new Autor("Irmãos Wachowski", "Matrix foi a obra-prima desses diretores");
+			Autor novoAutor13 = new Autor("Irmï¿½os Wachowski", "Matrix foi a obra-prima desses diretores");
 
 			
 
@@ -93,7 +93,7 @@ public class IMDBPopulandoBDTeste extends TestCase {
 
 			Filme novoFilme4 = new Filme("Star Wars IV : Uma Nova Esperanca", 1977, novoGenero13, novoAutor11,130);
 
-			Filme novoFilme5 = new Filme("Star Wars V: O Império Contra-Ataca", 1980, novoGenero13,
+			Filme novoFilme5 = new Filme("Star Wars V: O Impï¿½rio Contra-Ataca", 1980, novoGenero13,
 
 					novoAutor11, 129);
 
@@ -175,7 +175,7 @@ public class IMDBPopulandoBDTeste extends TestCase {
 
 			//Avaliacao aval4 = new Avaliacao(3, "Filme muito bobo");
 
-			//Avaliacao aval5 = new Avaliacao(5, "Melhor filme de ficçao cientifica! Porem as sequencias deixam a desejar");
+			//Avaliacao aval5 = new Avaliacao(5, "Melhor filme de ficï¿½ao cientifica! Porem as sequencias deixam a desejar");
 
 			
 

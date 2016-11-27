@@ -1,7 +1,7 @@
 package br.unb.cic.DiariasEPassagens.negocio;
 
-import br.unb.cic.DiariasEPassagens.negocio.AlbumMusical;
-import br.unb.cic.DiariasEPassagens.negocio.Autor;
+import br.unb.cic.DiariasEPassagens.entidades.AlbumMusical;
+import br.unb.cic.DiariasEPassagens.entidades.Autor;
 import br.unb.cic.DiariasEPassagens.negocio.FaixaMusical;
 import br.unb.cic.DiariasEPassagens.negocio.Genero;
 import br.unb.cic.DiariasEPassagens.negocio.IMDBFacade;
@@ -15,7 +15,7 @@ public class IMDBFacadeTest6 extends TestCase {
    
 		 IMDBFacade facade = ContextoID.instance().facade();
    
-		 Autor autor = new Autor("Arctic Monkeys", "é simplismente sensacional.");
+		 Autor autor = new Autor("Arctic Monkeys", "ï¿½ simplismente sensacional.");
 		 Genero genero = new Genero("Alternative", " ");
 		 
 		 AlbumMusical album = new AlbumMusical("AM",2013, genero, autor);

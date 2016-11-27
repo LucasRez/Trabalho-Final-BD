@@ -1,10 +1,31 @@
 package br.unb.cic.DiariasEPassagens.entidades;
 
+import java.util.ArrayList;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="funcao")
 public class Funcao {
 
+	@Id
+	@Column(name="funccod")
 	private int id;
 	
+	@Column(name="funcnome")
 	private String nome;
+	
+	@ManyToMany
+	@JoinTable(name="possui")
+	private ArrayList<SubFuncao> subFuncoes;
+	
+	@ManyToMany(mappedBy="funcoes")
+	private ArrayList<UnidadeGestora> uniGests;
 
 	public Funcao(int id, String nome) {
 		this.id = id;

@@ -1,6 +1,6 @@
 package br.unb.cic.DiariasEPassagens.negocio;
 
-import br.unb.cic.DiariasEPassagens.negocio.Autor;
+import br.unb.cic.DiariasEPassagens.entidades.Autor;
 import br.unb.cic.DiariasEPassagens.negocio.IMDBFacade;
 import br.unb.cic.DiariasEPassagens.util.ContextoID;
 import junit.framework.TestCase;

@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import br.unb.cic.DiariasEPassagens.entidades.Autor;
+
 @Entity
 @AttributeOverrides({
 @AttributeOverride(name="titulo", column=@Column),
