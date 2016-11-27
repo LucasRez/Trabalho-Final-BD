@@ -3,9 +3,10 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import br.unb.cic.DiariasEPassagens.entidades.Favorecido;
+import br.unb.cic.DiariasEPassagens.entidades.Pagamento;
+import br.unb.cic.DiariasEPassagens.entidades.UnidadeGestora;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
-import br.unb.cic.DiariasEPassagens.negocio.UnidadeGestora;
-import br.unb.cic.DiariasEPassagens.negocio.Pagamento;
 
 public class DAOFavorecidoJPA implements DAOFavorecido{
 	
@@ -20,42 +21,42 @@ public class DAOFavorecidoJPA implements DAOFavorecido{
 	@Override
 	public Favorecido recuperaPorNome(String nome) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<Favorecido> Favorecidos = em.createQuery("FROM Favorecido WHERE Nome = :NomeParam").setParameter("NomeParam", nome).getResultList();
+		List<Favorecido> Favorecidos = em.createQuery("FROM Favorecido WHERE favorecidonome = :NomeParam").setParameter("NomeParam", nome).getResultList();
 		return Favorecidos.size() == 1 ? Favorecidos.get(0) : null;
 	}
 	
 	@Override
 	public Favorecido recuperaPorCPF(String CPF) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<Favorecido> Favorecidos = em.createQuery("FROM Favorecido WHERE Nome = :CPFParam").setParameter("CPFParam", CPF).getResultList();
+		List<Favorecido> Favorecidos = em.createQuery("FROM Favorecido WHERE favorecidocpf = :CPFParam").setParameter("CPFParam", CPF).getResultList();
 		return Favorecidos.size() == 1 ? Favorecidos.get(0) : null;
 	}
 
-	public Favorecido recuperaPorPagamValor(String pagamValor) {
-		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<Favorecido> Favorecidos = em.createQuery("FROM Favorecido WHERE PagamValor = :pagamValorParam").setParameter("pagamValorParam", pagamValor).getResultList();
-		return Favorecidos.size() == 1 ? Favorecidos.get(0) : null;
-	}
-	
 	@Override
 	public List<Favorecido> recuperaPorUnidadeGestora(String unidadeGestora){
-		unidadeGestora object;
+		UnidadeGestora object;
 		
 		object = new DAOUnidadeGestoraJPA().recuperaPorNome(unidadeGestora);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		return em.createQuery("FROM Favorecido WHERE unidadeGestora = :unidadeGestoraParam").setParameter("unidadeGestoraParam", object).getResultList();
+		return em.createQuery("FROM Favorecido WHERE unigestcod = :unidadeGestoraParam").setParameter("unidadeGestoraParam", object.getId()).getResultList();
 		//return Favorecidos.size() == 1 ? Favorecidos.get(0) : null;
 	}
 
 	
 	@Override
-	//public Favorecido recuperaPorPagamValor(String PagamValor) {
-	public List<Favorecido> recuperaPorPagamento(String pagamento){
-		pagamento object;
+	public Favorecido recuperaPorPagamento(int pagamentoId){
+		Pagamento object;
 		
-		object = new DAOPagamentoJPA().recuperaPorNome(pagamento);
+		object = new DAOPagamentoJPA().recuperaPorID(pagamentoId);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		return em.createQuery("FROM Favorecido WHERE pagamento =:pagamentoParam").setParameter("pagamentoParam", object).getResultList();
-		//return Favorecidos.size() == 1 ? Favorecidos.get(0) : null;
+		List<Favorecido> favorecidos = em.createQuery("FROM favorecido WHERE favorecidocpf =:CpfParam").setParameter("CpfParam", object.getFavorecido().getCpf()).getResultList();
+		return favorecidos.size() == 1 ? favorecidos.get(0) : null;
+	}
+
+	@Override
+	public Favorecido recuperaPorId(int id) {
+		em = EMFactoryHelper.instance().getFactory().createEntityManager();
+		List<Favorecido> Favorecidos = em.createQuery("FROM Favorecido WHERE favorecidoid = :IdParam").setParameter("IdParam", id).getResultList();
+		return Favorecidos.size() == 1 ? Favorecidos.get(0) : null;
 	}
 }

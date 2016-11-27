@@ -1,59 +1,62 @@
 package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
 import br.unb.cic.DiariasEPassagens.integracao.DAOAcao;
-import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
-import br.unb.cic.DiariasEPassagens.integracao.DAOAvaliacao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFactory;
-import br.unb.cic.DiariasEPassagens.integracao.DAOFaixaMusical;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFavorecido;
-import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFuncao;
-import br.unb.cic.DiariasEPassagens.integracao.DAOUsuario;
+import br.unb.cic.DiariasEPassagens.integracao.DAOOrgaoSubordinado;
+import br.unb.cic.DiariasEPassagens.integracao.DAOOrgaoSuperior;
+import br.unb.cic.DiariasEPassagens.integracao.DAOPagamento;
+import br.unb.cic.DiariasEPassagens.integracao.DAOPrograma;
+import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
+import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
 
-/**
- * Implementacao da classe abstrata DAOFactory 
- * com persistencia via JPA. 
- * 
- * @author rbonifacio
- */
+
 public class DAOFactoryImpl extends DAOFactory {
+
 	@Override
-	public DAOUnidadeGestora createDAOGenero() {
-		return new DAOGeneroJPA();
+	public DAOUnidadeGestora createDAOUnidadeGestora() {
+		return new DAOUnidadeGestoraJPA();
 	}
 
 	@Override
-	public DAOFuncao createDAOTrabalhoArtistico() {
+	public DAOFuncao createDAOFuncao() {
 		return new DAOFuncaoJPA();
 	}
 
 	@Override
-	public DAOFavorecido createDAOFilme() {
-		return new DAOFilmeJPA();
+	public DAOFavorecido createDAOFavorecido() {
+		return new DAOFavorecidoJPA();
 	}
 
 	@Override
-	public DAOFaixaMusical createDAOFaixaMusical() {
-		return new DAOOrgaoSubordinadoJPA();
+	public DAOPagamento createDAOPagamento() {
+		return new DAOPagamentoJPA();
 	}
 
 	@Override
-	public DAOSubFuncao createDAOAutor() {
+	public DAOSubFuncao createDAOSubFuncao() {
 		return new DAOSubFuncaoJPA();
 	}
 
 	@Override
-	public DAOAcao createDAOAlbumMusical() {
+	public DAOAcao createDAOAcao() {
 		return new DAOAcaoJPA();
 	}
 
 	@Override
-	public DAOUsuario createDAOUsuario() {
-		return new DAOUsuarioJPA();
+	public DAOOrgaoSubordinado createDAOOrgaoSubordinado() {
+		return new DAOOrgaoSubordinadoJPA();
+	}
+
+	@Override
+	public DAOOrgaoSuperior createDAOOrgaoSuperior() {
+		return new DAOOrgaoSuperiorJPA();
+	}
+
+	@Override
+	public DAOPrograma createDAOPrograma() {
+		return new DAOProgramaJPA();
 	}
 	
-	@Override
-	public DAOAvaliacao createDAOAvaliacao(){
-		return new DAOAvaliacaoJPA();
-	}
 }

@@ -2,16 +2,15 @@ package br.unb.cic.DiariasEPassagens.integracao;
 
 import java.util.List;
 
-import br.unb.cic.DiariasEPassagens.negocio.Pagamento;
-import br.unb.cic.DiariasEPassagens.negocio.Acao;
-import br.unb.cic.DiariasEPassagens.negocio.Favorecido;
+import br.unb.cic.DiariasEPassagens.entidades.Pagamento;
+import br.unb.cic.DiariasEPassagens.entidades.SubFuncao;
 
 
 public interface DAOPagamento {
-	public SubFuncao recuperaPorData(String data);
-	public SubFuncao recuperaPorValor(String valor);
-	public SubFuncao recuperaPorNome(String nome);
-	public SubFuncao recuperaPorID(String id);
+	public Pagamento recuperaPorData(String data);
+	public Pagamento recuperaPorValor(String valor);
+	public Pagamento recuperaPorNome(String nome);
+	public Pagamento recuperaPorID(int id);
 	public List<Pagamento> recuperaPagamentosPorAcao(String acao);
 	public List<Pagamento> recuperaPagamentosPorFavorecido(String favorecido);
 

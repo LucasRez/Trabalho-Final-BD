@@ -1,10 +1,12 @@
 package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
 import java.util.List;
+
 import javax.persistence.EntityManager;
 
+import br.unb.cic.DiariasEPassagens.entidades.Funcao;
+import br.unb.cic.DiariasEPassagens.entidades.UnidadeGestora;
 import br.unb.cic.DiariasEPassagens.integracao.DAOFuncao;
-import br.unb.cic.DiariasEPassagens.negocio.Funcao;
 
 public class DAOFuncaoJPA implements DAOFuncao{
 	
@@ -17,7 +19,7 @@ public class DAOFuncaoJPA implements DAOFuncao{
 	}
 
 	@Override
-	public Funcao recuperarPorID(String id) {
+	public Funcao recuperarPorID(int id) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
 		List<Funcao> Funcao = em.createQuery("FROM Funcao WHERE id = :idParam").setParameter("idParam", id).getResultList();
 		return Funcao.size() == 1 ? Funcao.get(0) : null;
@@ -32,7 +34,7 @@ public class DAOFuncaoJPA implements DAOFuncao{
 	
 	@Override
 	public List<Funcao> recuperaPorUnidadeGestora(String unidadeGestora){
-		unidadeGestora object;
+		UnidadeGestora object;
 		
 		object = new DAOUnidadeGestoraJPA().recuperaPorNome(unidadeGestora);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();

@@ -3,6 +3,8 @@ package br.unb.cic.DiariasEPassagens.entidades;
 import java.util.ArrayList;
 
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,6 +14,7 @@ public class Favorecido {
 
 	@Id
 	@Column(name="favorecidoid")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
 	@Column(name="favorecidonome")
@@ -27,9 +30,7 @@ public class Favorecido {
 	@OneToMany(mappedBy="favorecido")
 	private ArrayList<Pagamento> pagamentos;
 
-	public Favorecido(int id, String nome, String cpf, UnidadeGestora uniGest, ArrayList<Pagamento> pagamentos) {
-		super();
-		this.id = id;
+	public Favorecido(String nome, String cpf, UnidadeGestora uniGest, ArrayList<Pagamento> pagamentos) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.uniGest = uniGest;
@@ -46,10 +47,6 @@ public class Favorecido {
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getNome() {

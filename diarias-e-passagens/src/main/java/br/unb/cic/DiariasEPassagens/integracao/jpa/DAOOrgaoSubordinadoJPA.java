@@ -1,10 +1,12 @@
 package br.unb.cic.DiariasEPassagens.integracao.jpa;
 
-import br.unb.cic.DiariasEPassagens.integracao.DAOOrgaoSubordinado;
-import br.unb.cic.DiariasEPassagens.negocio.OrgaoSubordinado;
-
 import java.util.List;
+
 import javax.persistence.EntityManager;
+
+import br.unb.cic.DiariasEPassagens.entidades.OrgaoSubordinado;
+import br.unb.cic.DiariasEPassagens.entidades.OrgaoSuperior;
+import br.unb.cic.DiariasEPassagens.integracao.DAOOrgaoSubordinado;
 
 public class DAOOrgaoSubordinadoJPA implements DAOOrgaoSubordinado{
 	
@@ -24,22 +26,15 @@ public class DAOOrgaoSubordinadoJPA implements DAOOrgaoSubordinado{
 	}
 	
 	@Override
-	public OrgaoSubordinado recuperaPorID(String id) {
+	public OrgaoSubordinado recuperaPorID(int id) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
 		List<OrgaoSubordinado> orgaoSubordinado = em.createQuery("FROM OrgaoSubordinado WHERE ID = :IDParam").setParameter("idParam", id).getResultList();
 		return orgaoSubordinado.size() == 1 ? orgaoSubordinado.get(0) : null;
 	}
 	
 	@Override
-	public OrgaoSubordinado recuperaPorUnidadeGestora(String unidadeGestora) {
-		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<OrgaoSubordinado> orgaoSubordinado = em.createQuery("FROM OrgaoSubordinado WHERE unidadeGestora = :unidadeGestoraParam").setParameter("unidadeGestoraParam", unidadeGestora).getResultList();
-		return orgaoSubordinado.size() == 1 ? orgaoSubordinado.get(0) : null;
-	}
-	
-	@Override
 	public List<OrgaoSubordinado> recuperaPorOrgaoSuperior(String orgaoSuperior){
-		orgaoSuperior object;
+		OrgaoSuperior object;
 		
 		object = new DAOOrgaoSuperiorJPA().recuperaPorNome(orgaoSuperior);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();

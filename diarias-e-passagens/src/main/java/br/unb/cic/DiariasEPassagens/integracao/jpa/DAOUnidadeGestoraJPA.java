@@ -4,8 +4,9 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import br.unb.cic.DiariasEPassagens.entidades.OrgaoSubordinado;
+import br.unb.cic.DiariasEPassagens.entidades.UnidadeGestora;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
-import br.unb.cic.DiariasEPassagens.negocio.UnidadeGestora;
 
 
 public class DAOUnidadeGestoraJPA implements DAOUnidadeGestora {
@@ -19,7 +20,7 @@ public class DAOUnidadeGestoraJPA implements DAOUnidadeGestora {
 	}
 
 	@Override
-	public UnidadeGestora recuperaPorNome(String Nome) {
+	public UnidadeGestora recuperaPorNome(String nome) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
 		List<UnidadeGestora> UnidadeGestoras = em.createQuery("FROM UnidadeGestora WHERE Nome = :nomeParam").setParameter("NomeParam", nome).getResultList();
 		return UnidadeGestoras.size() == 1 ? UnidadeGestoras.get(0): null;
@@ -33,17 +34,17 @@ public class DAOUnidadeGestoraJPA implements DAOUnidadeGestora {
 	}
 	
 	@Override
-	public UnidadeGestora recuperaPorFuncao(String funcao) {
+	public List<UnidadeGestora> recuperaPorFuncao(String funcao) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
 		List<UnidadeGestora> UnidadeGestoras = em.createQuery("FROM UnidadeGestora WHERE Funcao = :FuncaoParam").setParameter("FuncaoParam", funcao).getResultList();
-		return UnidadeGestoras.size() == 1 ? UnidadeGestoras.get(0): null;
+		return UnidadeGestoras;
 	}
 	
 	@Override
 	public List<UnidadeGestora> recuperaPorOrgaoSubordinado(String orgaoSubordinado){
-		orgaoSubordinado object;
+		OrgaoSubordinado object;
 		
-		object = new DAOrgaoSubordinadoJPA().recuperaPorNome(orgaoSubordinado);
+		object = new DAOOrgaoSubordinadoJPA().recuperaPorNome(orgaoSubordinado);
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
 		return em.createQuery("FROM UnidadeGestora WHERE orgaoSubordinado = :orgaoSubordinado").setParameter("orgaoSubordinadoParam", object).getResultList();
 		//return Favorecidos.size() == 1 ? Favorecidos.get(0) : null;

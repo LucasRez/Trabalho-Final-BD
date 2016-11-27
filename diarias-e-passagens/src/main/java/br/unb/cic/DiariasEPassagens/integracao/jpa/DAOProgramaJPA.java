@@ -3,9 +3,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import br.unb.cic.DiariasEPassagens.entidades.Programa;
 import br.unb.cic.DiariasEPassagens.integracao.DAOPrograma;
-import br.unb.cic.DiariasEPassagens.negocio.Acao;
-import br.unb.cic.DiariasEPassagens.negocio.Programa;
 
 public class DAOProgramaJPA implements DAOPrograma{
 	
@@ -25,7 +24,7 @@ public class DAOProgramaJPA implements DAOPrograma{
 	}
 	
 	@Override
-	public Programa recuperaPorID(String id) {
+	public Programa recuperaPorID(int id) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
 		List<Programa> Programas = em.createQuery("FROM Programa WHERE Id = :IdParam").setParameter("IdParam", id).getResultList();
 		return Programas.size() == 1 ? Programas.get(0) : null;
