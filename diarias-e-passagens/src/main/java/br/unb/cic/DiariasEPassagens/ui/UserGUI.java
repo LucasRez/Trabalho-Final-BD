@@ -2,7 +2,7 @@ package br.unb.cic.DiariasEPassagens.ui;
 
 import java.util.Scanner;
 
-import br.unb.cic.DiariasEPassagens.integracao.jpa.facadeQueryJPA;
+import br.unb.cic.DiariasEPassagens.negocio.Facade;
 
 public class UserGUI {
 
