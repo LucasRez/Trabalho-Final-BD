@@ -18,7 +18,7 @@ public class DAOQueryJPA implements DAOQuery{
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
 					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
-							"postgres", "postgres");
+							"postgres", "02101995");
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
@@ -28,7 +28,7 @@ public class DAOQueryJPA implements DAOQuery{
 			while ( rs.next() ) {
 				String  nome = rs.getString("favorecidonome");
 				float valorPagam = rs.getFloat("sum");	            
-				System.out.println( "Nome do favorecido: " + nome  + "Total Gasto: " + valorPagam);
+				System.out.println( "Nome do favorecido: " + nome  + " |Total Gasto: " + valorPagam);
 
 			}
 			rs.close();
@@ -59,7 +59,7 @@ public class DAOQueryJPA implements DAOQuery{
 			while ( rs.next() ) {
 				String  nome = rs.getString("favorecidonome");
 				float valorPagam = rs.getFloat("sum");	            
-				System.out.println( "Nome do favorecido: " + nome  + "Total Gasto: " + valorPagam);
+				System.out.println( "Nome do favorecido: " + nome  + " | Total Gasto: " + valorPagam);
 
 			}
 			rs.close();
@@ -89,7 +89,7 @@ public class DAOQueryJPA implements DAOQuery{
 			while ( rs.next() ) {
 				String  nome = rs.getString("favorecidonome");
 				float valorPagam = rs.getFloat("sum");	            
-				System.out.println( "Nome do favorecido: " + nome  + "Total Gasto: " + valorPagam);
+				System.out.println( "Nome do favorecido: " + nome  + " | Total Gasto: " + valorPagam);
 
 			}
 			rs.close();
@@ -121,7 +121,7 @@ public class DAOQueryJPA implements DAOQuery{
 			while ( rs.next() ) {
 				String  nome = rs.getString("orgsupnome");
 				float valor = rs.getFloat("sum");	            
-				System.out.println( "Nome do Orgão que mais gastou: " + nome + " Total gasto: " + valor);
+				System.out.println( "Nome do Orgï¿½o que mais gastou: " + nome + " | Total gasto: " + valor);
 
 			}
 			rs.close();
@@ -151,7 +151,7 @@ public class DAOQueryJPA implements DAOQuery{
 			while ( rs.next() ) {
 				String  nome = rs.getString("acaonome");
 				float valor = rs.getFloat("sum");	            
-				System.out.println( "Nome da ação que gastou mais: " + nome + " Total gasto: " + valor);
+				System.out.println( "Nome da aï¿½ï¿½o que gastou mais: " + nome + " | Total gasto: " + valor);
 
 			}
 			rs.close();
@@ -182,7 +182,7 @@ public class DAOQueryJPA implements DAOQuery{
 			while ( rs.next() ) {
 				String  nome = rs.getString("prognome");
 				float valor = rs.getFloat("sum");	            
-				System.out.println( "Nome do favorecido: " + nome  + "Total Gasto: " + valor);
+				System.out.println( "Nome do favorecido: " + nome  + " | Total Gasto: " + valor);
 
 			}
 			rs.close();
@@ -206,7 +206,10 @@ public class DAOQueryJPA implements DAOQuery{
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
-			ResultSet rs = stmt.executeQuery( "select recuperaGastosPorCpf(CPF);" );
+			
+			String query = "select recuperaGastosPorCpf(" + "'" + CPF + "'" +  ");";
+			ResultSet rs = stmt.executeQuery(query);
+			
 			while ( rs.next() ) {
 				float valorPagam = rs.getFloat("recuperagastosporcpf");	            
 				System.out.println("Dinheiro Gasto: " + valorPagam);
@@ -234,7 +237,10 @@ public class DAOQueryJPA implements DAOQuery{
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
-			ResultSet rs = stmt.executeQuery( "select recuperaGastosPorNome(nome);" );
+			
+			String query = "select recuperaGastosPorNome(" + "'" + nome.toUpperCase() + "'" +  ");";
+			ResultSet rs = stmt.executeQuery(query);
+			
 			while ( rs.next() ) {
 				float valorPagam = rs.getFloat("recuperagastospornome");	            
 				System.out.println("Dinheiro Gasto: " + valorPagam);
@@ -266,7 +272,7 @@ public class DAOQueryJPA implements DAOQuery{
 			while ( rs.next() ) {
 				String pagamCod = rs.getString("pagamcod");
 				float valorPagam = rs.getFloat("sum");	            
-				System.out.println("Codigo do pagamento que teve o maior gasto: " + pagamCod + "Dinheiro Gasto: " + valorPagam);
+				System.out.println("Codigo do pagamento que teve o maior gasto: " + pagamCod + "| Dinheiro Gasto: " + valorPagam);
 
 			}
 			rs.close();
@@ -319,7 +325,10 @@ public class DAOQueryJPA implements DAOQuery{
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
-			ResultSet rs = stmt.executeQuery( "recuperaProgramaMaisCaroAcao(acaoNome);" );
+			
+			String query = "select recuperaProgramaMaisCaroAcao(" + "'" + acaoNome + "'" +  ");";
+			ResultSet rs = stmt.executeQuery(query);
+	
 			while ( rs.next() ) {
 				String retorno = rs.getString("recuperaprogramamaiscaroacao");	            
 				System.out.println("Dinheiro Gasto: " + retorno);
