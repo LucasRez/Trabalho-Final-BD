@@ -17,11 +17,11 @@ public class Facade {
 	}
 	
 	public void recuperaListaGastoTotaisDecres() {
-		daoQuery.recuperaListaGastoTotaisCresc();
+		daoQuery.recuperaListaGastoTotaisDecres();
 	}
 	
 	public void recuperaListaGastoTotaisCresc() {
-		daoQuery.recuperaListaGastoTotaisDecres();
+		daoQuery.recuperaListaGastoTotaisCresc();
 	}
 	
 	public void recuperaQualOrgSupGastouMais() {

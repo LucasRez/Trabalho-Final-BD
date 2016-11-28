@@ -98,11 +98,11 @@ public class UserGUI {
 				scanner.nextLine();
 				break;
 			case 11: 
-			
+				facade.recuperaCodPagamGastouMais();
 				System.out.println("Aperte Enter para continuar.");
 				scanner.nextLine();
 				break;
-			case 12: System.out.println("Saindo do programa"); break;
+			case 12: System.out.println("Programa encerrado!"); break;
 			default: System.out.println("Opcao invalida!");
 			System.out.println("Aperte Enter para continuar.");
 			scanner.nextLine();
