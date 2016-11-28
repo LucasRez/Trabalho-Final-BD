@@ -47,163 +47,163 @@ public class Facade {
 		daoUnidadeGestora = DAOFactory.instance(DataBase.SQLDB).createDAOUnidadeGestora();
 	}
 	
-	List<Acao> recuperaTodasAcoes() {
+	public List<Acao> recuperaTodasAcoes() {
 		return daoAcao.recuperaTodos();
 	}
 	
-	Acao recuperaAcaoPorNome(String nome) {
+	public Acao recuperaAcaoPorNome(String nome) {
 		return daoAcao.recuperaPorNome(nome);
 	}
 	
-	Acao recuperaAcaoPorId(String id) {
+	public Acao recuperaAcaoPorId(String id) {
 		return daoAcao.recuperaPorId(id);
 	}
 	
-	Acao recuperaAcaoPorLinguagemCidada(String linguagemCidada) {
+	public Acao recuperaAcaoPorLinguagemCidada(String linguagemCidada) {
 		return daoAcao.recuperaPorLinguagemCidada(linguagemCidada);
 	}
 	
-	List<Acao> recuperaAcoesPorPrograma(String programa) {
+	public List<Acao> recuperaAcoesPorPrograma(String programa) {
 		return daoAcao.recuperaAcoesPorPrograma(programa);
 	}
 	
-	List<Favorecido> recuperaTodosFavorecidos() {
+	public List<Favorecido> recuperaTodosFavorecidos() {
 		return daoFavorecido.recuperaTodos();
 	}
 	
-	Favorecido recuperaFavorecidoPorNome(String nome) {
+	public Favorecido recuperaFavorecidoPorNome(String nome) {
 		return daoFavorecido.recuperaPorNome(nome);
 	}
 	
-	Favorecido recuperaFavorecidoPorCPF(String CPF) {
+	public Favorecido recuperaFavorecidoPorCPF(String CPF) {
 		return daoFavorecido.recuperaPorCPF(CPF);
 	}
 	
-	Favorecido recuperaFavorecidoPorId(int id) {
+	public Favorecido recuperaFavorecidoPorId(int id) {
 		return daoFavorecido.recuperaPorId(id);
 	}
 	
-	List<Favorecido> recuperaFavorecidoPorUnidade(String unidadeGestora) {
+	public List<Favorecido> recuperaFavorecidoPorUnidade(String unidadeGestora) {
 		return daoFavorecido.recuperaPorUnidadeGestora(unidadeGestora);
 	}
 	
-	Favorecido recuperaFavorecidoPorPagamento(int pagamentoId) {
+	public Favorecido recuperaFavorecidoPorPagamento(int pagamentoId) {
 		return daoFavorecido.recuperaPorPagamento(pagamentoId);
 	}
 	
-	Pagamento recuperaPagamentoPorData(String data) {
+	public Pagamento recuperaPagamentoPorData(String data) {
 		return daoPagamento.recuperaPorData(data);
 	}
 	
-	Pagamento recuperaPagamentoPorValor(String valor) {
+	public Pagamento recuperaPagamentoPorValor(String valor) {
 		return daoPagamento.recuperaPorValor(valor);
 	}
 	
-	Pagamento recuperaPagamentoPorID(int id) {
+	public Pagamento recuperaPagamentoPorID(int id) {
 		return daoPagamento.recuperaPorID(id);
 	}
 	
-	Pagamento recuperaPagamentoPorGestao(int gestaocod) {
+	public Pagamento recuperaPagamentoPorGestao(int gestaocod) {
 		return daoPagamento.recuperaPorGestao(gestaocod);
 	}
 	
-	List<Pagamento> recuperaPagamentosPorAcao(String acao) {
+	public List<Pagamento> recuperaPagamentosPorAcao(String acao) {
 		return daoPagamento.recuperaPagamentosPorAcao(acao);
 	}
 	
-	List<Pagamento> recuperaPagamentosPorFavorecido(String favorecido) {
+	public List<Pagamento> recuperaPagamentosPorFavorecido(String favorecido) {
 		return daoPagamento.recuperaPagamentosPorFavorecido(favorecido);
 	}
 	
-	List<UnidadeGestora> recuperaTodasUniGests() {
+	public List<UnidadeGestora> recuperaTodasUniGests() {
 		return daoUnidadeGestora.recuperaTodos();
 	}
 	
-	UnidadeGestora recuperaUniGestPorNome(String nome) {
+	public UnidadeGestora recuperaUniGestPorNome(String nome) {
 		return daoUnidadeGestora.recuperaPorNome(nome);
 	}
 	
-	UnidadeGestora recuperaUniGestPorID(String id) {
+	public UnidadeGestora recuperaUniGestPorID(String id) {
 		return daoUnidadeGestora.recuperaPorID(id);
 	}
 	
-	List<UnidadeGestora> recuperaUniGestPorOrgaoSubordinado(String orgaoSubordinado) {
+	public List<UnidadeGestora> recuperaUniGestPorOrgaoSubordinado(String orgaoSubordinado) {
 		return daoUnidadeGestora.recuperaPorOrgaoSubordinado(orgaoSubordinado);
 	}
 	
-	List<UnidadeGestora> recuperaUniGestPorFuncao(String funcao) {
+	public List<UnidadeGestora> recuperaUniGestPorFuncao(String funcao) {
 		return daoUnidadeGestora.recuperaPorFuncao(funcao);
 	}
 	
-	List<SubFuncao> recuperTodasSubFuncoes() {
+	public List<SubFuncao> recuperTodasSubFuncoes() {
 		return daoSubFuncao.recuperaTodos();
 	}
 	
-	SubFuncao recuperaSubFuncaoPorNome(String nome) {
+	public SubFuncao recuperaSubFuncaoPorNome(String nome) {
 		return daoSubFuncao.recuperaPorNome(nome);
 	}
 	
-	SubFuncao recuperaSubFuncaoPorID(int id) {
+	public SubFuncao recuperaSubFuncaoPorID(int id) {
 		return daoSubFuncao.recuperaPorID(id);
 	}
 	
-	List<SubFuncao> recuperaSubFuncaoPorFuncao(String funcao) {
+	public List<SubFuncao> recuperaSubFuncaoPorFuncao(String funcao) {
 		return daoSubFuncao.recuperaSubFuncaoPorFuncao(funcao);
 	}
 	
-	List<Programa> recuperaTodosProgramas() {
+	public List<Programa> recuperaTodosProgramas() {
 		return daoPrograma.recuperaTodos();
 	}
 	
-	Programa recuperaProgramaPorID(int id) {
+	public Programa recuperaProgramaPorID(int id) {
 		return daoPrograma.recuperaPorID(id);
 	}
 	
-	Programa recuperaProgramaPorNome(String nome) {
+	public Programa recuperaProgramaPorNome(String nome) {
 		return daoPrograma.recuperaPorNome(nome);
 	}
 	
-	List<OrgaoSuperior> recuperaTodosOrgSup() {
+	public List<OrgaoSuperior> recuperaTodosOrgSup() {
 		return daoOrgaoSuperior.recuperaTodos();
 	}
 	
-	OrgaoSuperior recuperaOrgSupPorID(int id) {
+	public OrgaoSuperior recuperaOrgSupPorID(int id) {
 		return daoOrgaoSuperior.recuperaPorID(id);
 	}
 	
-	OrgaoSuperior recuperaOrgSupPorNome(String nome) {
+	public OrgaoSuperior recuperaOrgSupPorNome(String nome) {
 		return daoOrgaoSuperior.recuperaPorNome(nome);
 	}
 	
-	List<OrgaoSubordinado> recuperaTodosOrgSub() {
+	public List<OrgaoSubordinado> recuperaTodosOrgSub() {
 		return daoOrgaoSubordinado.recuperaTodos();
 	}
 	
-	List<OrgaoSubordinado> recuperaOrgSubPorOrgSup(String orgaoSuperior) {
+	public List<OrgaoSubordinado> recuperaOrgSubPorOrgSup(String orgaoSuperior) {
 		return daoOrgaoSubordinado.recuperaPorOrgaoSuperior(orgaoSuperior);
 	}
 	
-	OrgaoSubordinado recuperaOrgSubPorNome(String nome) {
+	public OrgaoSubordinado recuperaOrgSubPorNome(String nome) {
 		return daoOrgaoSubordinado.recuperaPorNome(nome);
 	}
 	
-	OrgaoSubordinado recpueraOrgSubPorID(int id) {
+	public OrgaoSubordinado recpueraOrgSubPorID(int id) {
 		return daoOrgaoSubordinado.recuperaPorID(id);
 	}
 	
-	List<Funcao> recuperaTodasFuncoes() {
+	public List<Funcao> recuperaTodasFuncoes() {
 		return daoFuncao.recuperaTodos();
 	}
 	
-	List<Funcao> recuperaFuncaoPorUniGest(String unidadeGestora) {
+	public List<Funcao> recuperaFuncaoPorUniGest(String unidadeGestora) {
 		return daoFuncao.recuperaPorUnidadeGestora(unidadeGestora);
 	}
 	
-	Funcao recuperaFuncaoPorNome(String nome) {
+	public Funcao recuperaFuncaoPorNome(String nome) {
 		return daoFuncao.recuperaPorNome(nome);
 	}
 	
-	Funcao recuperaFuncaoPorID(int id) {
+	public Funcao recuperaFuncaoPorID(int id) {
 		return daoFuncao.recuperarPorID(id);
 	}
 }

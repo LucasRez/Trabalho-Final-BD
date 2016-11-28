@@ -9,7 +9,7 @@ public class EMFactoryHelper {
     private static EMFactoryHelper instance;
     
     private EMFactoryHelper() {
-       factory = Persistence.createEntityManagerFactory("DiariasEPassagens");
+       factory = Persistence.createEntityManagerFactory("TrabFinalBD");
     }
     
     public static EMFactoryHelper instance() {

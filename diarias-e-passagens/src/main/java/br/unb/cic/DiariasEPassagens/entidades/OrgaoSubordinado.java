@@ -3,11 +3,15 @@ package br.unb.cic.DiariasEPassagens.entidades;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="orgao_subordinado")
 public class OrgaoSubordinado {
 
 	@Id
@@ -18,8 +22,8 @@ public class OrgaoSubordinado {
 	private String nome;
 	
 	@ManyToOne
-	@JoinColumn(name="orgsupcod", nullable=false)
-	private OrgaoSuperior orgSup;
+	@JoinColumn(name="orgsupcod", nullable=false, referencedColumnName="orgsupcod")
+	private OrgaoSuperior orgSuperior;
 	
 	@OneToMany(mappedBy="orgSub")
 	private List<UnidadeGestora> uniGests;
@@ -28,7 +32,7 @@ public class OrgaoSubordinado {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.orgSup = orgSup;
+		this.orgSuperior = orgSup;
 		this.uniGests = uniGests;
 	}
 
@@ -57,11 +61,11 @@ public class OrgaoSubordinado {
 	}
 
 	public OrgaoSuperior getOrgSup() {
-		return orgSup;
+		return orgSuperior;
 	}
 
 	public void setOrgSup(OrgaoSuperior orgSup) {
-		this.orgSup = orgSup;
+		this.orgSuperior = orgSup;
 	}
 	
 	

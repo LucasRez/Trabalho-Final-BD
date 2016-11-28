@@ -3,9 +3,13 @@ package br.unb.cic.DiariasEPassagens.entidades;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="orgao_superior")
 public class OrgaoSuperior {
 
 	@Id
@@ -15,7 +19,7 @@ public class OrgaoSuperior {
 	@Column(name="orgsupnome")
 	private String nome;
 	
-	@OneToMany(mappedBy="orgSup")
+	@OneToMany(mappedBy="orgSuperior")
 	private List<OrgaoSubordinado> orgSubs;
 
 	public OrgaoSuperior(int id, String nome, List<OrgaoSubordinado> orgSubs) {

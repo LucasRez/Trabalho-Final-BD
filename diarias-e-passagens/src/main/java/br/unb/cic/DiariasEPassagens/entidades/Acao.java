@@ -3,14 +3,17 @@ package br.unb.cic.DiariasEPassagens.entidades;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="acao")
 public class Acao {
 	
-	//TODO: Confirmar se o ID realmente é string
 	@Id
 	@Column(name="acaocod")
 	private String id;
@@ -25,7 +28,7 @@ public class Acao {
 	@JoinColumn(name="progcod")
 	private Programa programa;
 
-	@OneToMany(mappedBy="acao")
+	@OneToMany(targetEntity=Pagamento.class)
 	private List<Pagamento> pagamentos;
 	
 	public Acao(String id, String nome, String linguagemCidada, Programa programa, List<Pagamento> pagamentos) {

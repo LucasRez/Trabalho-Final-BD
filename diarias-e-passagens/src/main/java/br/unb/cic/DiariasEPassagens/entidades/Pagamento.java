@@ -31,9 +31,9 @@ public class Pagamento {
 	@JoinColumn(name="favorecidocpf", referencedColumnName="favorecidocpf", nullable=false)
 	private Favorecido favorecido;
 	
-	@ManyToOne
-	@JoinColumn(name="acaocod", nullable=false)
-	private Acao acao;
+	@ManyToOne(targetEntity=Acao.class)
+	@JoinColumn(name="acaocod", nullable=false, referencedColumnName="acaocod")
+	private Acao acaoPag;
 
 	public Pagamento(int id, String codigo, String data, String valor, int gestCod, Favorecido favorecido, Acao acao) {
 		super();
@@ -43,7 +43,7 @@ public class Pagamento {
 		this.valor = valor;
 		this.gestCod = gestCod;
 		this.favorecido = favorecido;
-		this.acao = acao;
+		this.acaoPag = acao;
 	}
 	
 	public int getId() {
@@ -91,11 +91,11 @@ public class Pagamento {
 	}
 
 	public Acao getAcao() {
-		return acao;
+		return acaoPag;
 	}
 
 	public void setAcao(Acao acao) {
-		this.acao = acao;
+		this.acaoPag = acao;
 	}	
 	
 }
