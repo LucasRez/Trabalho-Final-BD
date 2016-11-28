@@ -1,16 +1,19 @@
 package br.unb.cic.DiariasEPassagens.entidades;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="acao")
 public class Acao {
 	
-	//TODO: Confirmar se o ID realmente é string
 	@Id
 	@Column(name="acaocod")
 	private String id;
@@ -25,10 +28,10 @@ public class Acao {
 	@JoinColumn(name="progcod")
 	private Programa programa;
 
-	@OneToMany(mappedBy="acao")
-	private ArrayList<Pagamento> pagamentos;
+	@OneToMany(targetEntity=Pagamento.class)
+	private List<Pagamento> pagamentos;
 	
-	public Acao(String id, String nome, String linguagemCidada, Programa programa, ArrayList<Pagamento> pagamentos) {
+	public Acao(String id, String nome, String linguagemCidada, Programa programa, List<Pagamento> pagamentos) {
 		this.id = id;
 		this.nome = nome;
 		this.linguagemCidada = linguagemCidada;
@@ -44,11 +47,11 @@ public class Acao {
 		this.id = id;
 	}
 
-	public ArrayList<Pagamento> getPagamentos() {
+	public List<Pagamento> getPagamentos() {
 		return pagamentos;
 	}
 
-	public void setPagamentos(ArrayList<Pagamento> pagamentos) {
+	public void setPagamentos(List<Pagamento> pagamentos) {
 		this.pagamentos = pagamentos;
 	}
 

@@ -1,6 +1,6 @@
 package br.unb.cic.DiariasEPassagens.entidades;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,10 +22,10 @@ public class Funcao {
 	
 	@ManyToMany
 	@JoinTable(name="possui")
-	private ArrayList<SubFuncao> subFuncoes;
+	private List<SubFuncao> subFuncoes;
 	
 	@ManyToMany(mappedBy="funcoes")
-	private ArrayList<UnidadeGestora> uniGests;
+	private List<UnidadeGestora> uniGests;
 
 	public Funcao(int id, String nome) {
 		this.id = id;

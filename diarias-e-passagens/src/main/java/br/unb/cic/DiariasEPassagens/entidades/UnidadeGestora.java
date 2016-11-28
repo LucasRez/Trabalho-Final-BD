@@ -1,14 +1,18 @@
 package br.unb.cic.DiariasEPassagens.entidades;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="unidade_gestora")
 public class UnidadeGestora {
 
 	@Id
@@ -24,9 +28,9 @@ public class UnidadeGestora {
 	
 	@ManyToMany
 	@JoinTable(name="exerce")
-	private ArrayList<Funcao> funcoes;
+	private List<Funcao> funcoes;
 
-	public UnidadeGestora(int id, String nome, OrgaoSubordinado orgSub, ArrayList<Funcao> funcoes) {
+	public UnidadeGestora(int id, String nome, OrgaoSubordinado orgSub, List<Funcao> funcoes) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -34,15 +38,13 @@ public class UnidadeGestora {
 		this.funcoes = funcoes;
 	}
 
-	public ArrayList<Funcao> getFuncoes() {
+	public List<Funcao> getFuncoes() {
 		return funcoes;
 	}
 
-
-	public void setFuncoes(ArrayList<Funcao> funcoes) {
+	public void setFuncoes(List<Funcao> funcoes) {
 		this.funcoes = funcoes;
 	}
-
 
 	public int getId() {
 		return id;
