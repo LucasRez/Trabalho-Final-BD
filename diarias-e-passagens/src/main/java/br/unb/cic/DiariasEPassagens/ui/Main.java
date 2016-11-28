@@ -1,8 +1,9 @@
 package br.unb.cic.DiariasEPassagens.ui;
 
-import br.unb.cic.DiariasEPassagens.entidades.OrgaoSuperior;
-
-import br.unb.cic.DiariasEPassagens.negocio.Facade;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,16 +25,7 @@ public class Main {
    }
 }
 
-//public class Main {
-//
-//	public static void main(String[] args) {
-//		Facade facade = new Facade();
-//		
-//		OrgaoSuperior orgSup;
-//		
-//		orgSup = facade.recuperaOrgSupPorNome("PRESIDENCIA DA REPUBLICA");
-//		
-//		System.out.println(orgSup.getNome());
-//	}
-//
-//}
+	public static void main(String[] args) {
+		//		UserGUI gui = new UserGUI();
+		//		gui.interfaceUsuario();
+	}	
