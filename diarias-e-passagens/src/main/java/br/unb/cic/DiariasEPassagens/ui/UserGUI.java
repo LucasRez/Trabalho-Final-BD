@@ -2,6 +2,8 @@ package br.unb.cic.DiariasEPassagens.ui;
 
 import java.util.Scanner;
 
+import br.unb.cic.DiariasEPassagens.integracao.jpa.facadeQueryJPA;
+
 public class UserGUI {
 
 	private Scanner scanner;
@@ -9,9 +11,8 @@ public class UserGUI {
 	public void interfaceUsuario(){
 
 		int opcao = 0;
-		String nomeServidor, servidorCPF, nomeAcao, codPagamento;
-		//Facade cria facade
-
+		String nomeServidor, servidorCPF, nomeAcao;
+		Facade facade = new Facade();
 
 		do{
 			System.out.println("------DIARIAS E PASSSAGENS------");
@@ -38,93 +39,66 @@ public class UserGUI {
 
 			switch(opcao){
 			case 1: 
-				//FACADE
-				//System.out.println("O servidor que gastou mais foi: " + favorecido.getNome());
+				facade.recuperaQualServidorGastouMais();
 				System.out.println("Aperte Enter para continuar.");
 				scanner.nextLine();
 				break;
 			case 2: 
-				//facade
-				//List<Favorecido> listaFavorecidos = facade.;
-				//for(Favorecido object : listaFavorecidos){
-				//System.out.println("Nome do Servidor: " + object.getNome() + "Gastos do servidor: " + object)
-				//}
+				facade.recuperaListaGastoTotaisDecres();
 				System.out.println("Aperte Enter para continuar.");
 				scanner.nextLine();
 				break;
 			case 3: 
+				facade.recuperaListaGastoTotaisCresc();
 				System.out.println("Aperte Enter para continuar.");
 				scanner.nextLine();
 				break;
 			case 4: 
-				//facade
-				//System.out.println("O orgao superior que mais gastou foi: " + orgaoSuperior.getNome());
+				facade.recuperaQualOrgSupGastouMais();
 				System.out.println("Aperte Enter para continuar.");
 				scanner.nextLine();
 				break;
 			case 5: 
-				//facade
-				//System.out.println("O programa que mais gastou foi: " + programa.getNome());
+				facade.recuperaQualProgramaGastouMais();
 				System.out.println("Aperte Enter para continuar.");
 				scanner.nextLine();
 				break;
 			case 6: 
-				//facade
-				//System.out.println("A acao que mais gastou foi: " + acao.getNome());
+				facade.recuperaQualAcaoGastouMais();
 				System.out.println("Aperte Enter para continuar.");
 				scanner.nextLine();
 				break;
 			case 7: 
-				//facade
-				//System.out.println("O gasto total de Janeiro a Junha do ano de 2013 foi: " + pagamento.getValor());
+				facade.recuperaGastoTotal();
 				System.out.println("Aperte Enter para continuar.");
 				scanner.nextLine();
 				break;
 			case 8: 
 				System.out.println("Digite o nome do servidor: ");
 				nomeServidor = scanner.nextLine();
-				//facade
-				//if(/*facade.*//**/ != NULL){
-				//	System.out.println("Servidor: " + favorecido.getNome() + "Gastos do servidor: " + favorecido.getValorTotal());
-				//}else{
-				//	System.out.println("Servidor nao encontrado no Banco de Dados!");
-				//}
+				facade.recuperaGastoPorNome(nomeServidor);
+				
 				System.out.println("Aperte Enter para continuar.");
 				scanner.nextLine();
 				break;
 			case 9: 
 				System.out.println("Digite o CPF do servidor: ");
 				servidorCPF = scanner.nextLine();
-				//facade
-				//if(/*facade.*//**/ != NULL){
-				//	System.out.println("Servidor: " + favorecido.getCpf() + "Gastos do servidor: " + favorecido.getValorTotal());
-				//}else{
-				//	System.out.println("Servidor nao encontrado no Banco de Dados!");
-				//}
+				facade.recuperaGastoPorCpf(servidorCPF);
+				
 				System.out.println("Aperte Enter para continuar.");
 				scanner.nextLine();
 				break;
 			case 10: 
 				System.out.println("Digite a acao que deseja procurar: ");
 				nomeAcao = scanner.nextLine();
-				//facade
-				//if(/*facade.*//**/ != NULL){
-				//	System.out.println("Programa: " + programa.getNome() + "Gastos do programa: " + programa.getValorTotal());
-				//}else{
-				//	System.out.println("Acao nao encontrado no Banco de Dados!");
-				//}
+				facade.recuperaProgramadeAcaoGastouMais(nomeAcao);
+				
 				System.out.println("Aperte Enter para continuar.");
 				scanner.nextLine();
 				break;
 			case 11: 
-				System.out.println("Digite o codigo de pagamento que deseja procurar: ");
-				codPagamento = scanner.nextLine();
-				//facade
-				//if(/*facade.*//**/ != NULL){
-				//	System.out.println("Codigo do Pagamento: " + Pagamento.getCodigo() + "Gastos atrelados ao codigo: " + pagamento.getValor());
-				//}else{
-				//	System.out.println("Codigo de pagamento nao encontrado no Banco de Dados!");
-				//}
+			
 				System.out.println("Aperte Enter para continuar.");
 				scanner.nextLine();
 				break;
