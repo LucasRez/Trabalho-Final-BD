@@ -21,15 +21,6 @@ public abstract class DAOFactory {
 		}
 		return instance;
 	}
-	
-	public abstract DAOUnidadeGestora createDAOUnidadeGestora();
-	public abstract DAOFuncao createDAOFuncao();
-	public abstract DAOFavorecido createDAOFavorecido();
-	public abstract DAOPagamento createDAOPagamento();
-	public abstract DAOSubFuncao createDAOSubFuncao();
-	public abstract DAOAcao createDAOAcao();
-	public abstract DAOOrgaoSubordinado createDAOOrgaoSubordinado();
-	public abstract DAOOrgaoSuperior createDAOOrgaoSuperior();
-	public abstract DAOPrograma  createDAOPrograma();
+
 	public abstract DAOQuery createDAOQuery();
 }

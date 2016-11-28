@@ -17,14 +17,14 @@ public class DAOQueryJPA implements DAOQuery{
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
-					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
-							"postgres", "02101995");
+					.getConnection("jdbc:postgresql://localhost:5432/TrabFinalBD",
+							"postgres", "postgres");
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
 			ResultSet rs = stmt.executeQuery( "select f.favorecidonome, sum(p.pagamvalor) from pagamento p join "
-					+ "favorecido f on f.favorecidoid = p.favorecidoid group "
-					+ "by f.favorecidonome order by sum(p.pagamvalor) desc limit 1;" );
+					+ " favorecido f on f.favorecidoid = p.favorecidoid group "
+					+ " by f.favorecidonome order by sum(p.pagamvalor) desc limit 1;" );
 			while ( rs.next() ) {
 				String  nome = rs.getString("favorecidonome");
 				float valorPagam = rs.getFloat("sum");	            
@@ -48,14 +48,12 @@ public class DAOQueryJPA implements DAOQuery{
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
-					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+					.getConnection("jdbc:postgresql://localhost:5432/TrabFinalBD",
 							"postgres", "postgres");
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
-			ResultSet rs = stmt.executeQuery("select f.favorecidonome, sum(p.pagamvalor) from pagamento p"
-					+ "join favorecido f on f.favorecidoid = p.favorecidoid group by f.favorecidonome order by sum(p.pagamvalor)"
-					+ "desc;");
+			ResultSet rs = stmt.executeQuery("select f.favorecidonome, sum(p.pagamvalor) from pagamento p join favorecido f on f.favorecidoid = p.favorecidoid group " + "by f.favorecidonome order by sum(p.pagamvalor) desc limit 1;");
 			while ( rs.next() ) {
 				String  nome = rs.getString("favorecidonome");
 				float valorPagam = rs.getFloat("sum");	            
@@ -78,14 +76,14 @@ public class DAOQueryJPA implements DAOQuery{
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
-					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+					.getConnection("jdbc:postgresql://localhost:5432/TrabFinalBD",
 							"postgres", "postgres");
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
-			ResultSet rs = stmt.executeQuery("select f.favorecidonome, sum(p.pagamvalor) from pagamento p "
+			ResultSet rs = stmt.executeQuery("select f.favorecidonome, sum(p.pagamvalor) from pagamento p"
 					+ "join favorecido f on f.favorecidoid = p.favorecidoid group by f.favorecidonome order by sum(p.pagamvalor)"
-					+ " asc;");
+					+ "asc;");
 			while ( rs.next() ) {
 				String  nome = rs.getString("favorecidonome");
 				float valorPagam = rs.getFloat("sum");	            
@@ -108,7 +106,7 @@ public class DAOQueryJPA implements DAOQuery{
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
-					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+					.getConnection("jdbc:postgresql://localhost:5432/TrabFinalBD",
 							"postgres", "postgres");
 			c.setAutoCommit(false);
 
@@ -140,7 +138,7 @@ public class DAOQueryJPA implements DAOQuery{
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
-					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+					.getConnection("jdbc:postgresql://localhost:5432/TrabFinalBD",
 							"postgres", "postgres");
 			c.setAutoCommit(false);
 
@@ -165,13 +163,12 @@ public class DAOQueryJPA implements DAOQuery{
 
 	@Override
 	public void recuperaQualProgramaGastouMais() {
-		// TODO Auto-generated method stub
 		Connection c = null;
 		Statement stmt = null;
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
-					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+					.getConnection("jdbc:postgresql://localhost:5432/TrabFinalBD",
 							"postgres", "postgres");
 			c.setAutoCommit(false);
 
@@ -201,7 +198,7 @@ public class DAOQueryJPA implements DAOQuery{
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
-					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+					.getConnection("jdbc:postgresql://localhost:5432/TrabFinalBD",
 							"postgres", "postgres");
 			c.setAutoCommit(false);
 
@@ -232,7 +229,7 @@ public class DAOQueryJPA implements DAOQuery{
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
-					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+					.getConnection("jdbc:postgresql://localhost:5432/TrabFinalBD",
 							"postgres", "postgres");
 			c.setAutoCommit(false);
 
@@ -263,7 +260,7 @@ public class DAOQueryJPA implements DAOQuery{
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
-					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+					.getConnection("jdbc:postgresql://localhost:5432/TrabFinalBD",
 							"postgres", "postgres");
 			c.setAutoCommit(false);
 
@@ -292,7 +289,7 @@ public class DAOQueryJPA implements DAOQuery{
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
-					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+					.getConnection("jdbc:postgresql://localhost:5432/TrabFinalBD",
 							"postgres", "postgres");
 			c.setAutoCommit(false);
 
@@ -320,7 +317,7 @@ public class DAOQueryJPA implements DAOQuery{
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
-					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+					.getConnection("jdbc:postgresql://localhost:5432/TrabFinalBD",
 							"postgres", "postgres");
 			c.setAutoCommit(false);
 

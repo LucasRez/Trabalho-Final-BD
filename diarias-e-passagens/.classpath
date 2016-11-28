@@ -13,6 +13,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/victor/UnB/Semestre6/BD/Trabalhos/ProjetoFinal/Trabalho-Final-BD/postgresql-9.4.1212.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql-9.4.1212.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
