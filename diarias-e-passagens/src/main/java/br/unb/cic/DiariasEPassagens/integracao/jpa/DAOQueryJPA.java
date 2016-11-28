@@ -53,7 +53,7 @@ public class DAOQueryJPA implements DAOQuery{
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
-			ResultSet rs = stmt.executeQuery("select f.favorecidonome, sum(p.pagamvalor) from pagamento p join favorecido f on f.favorecidoid = p.favorecidoid group by f.favorecidonome order by sum(p.pagamvalor) desc limit 1;");
+			ResultSet rs = stmt.executeQuery("select f.favorecidonome, sum(p.pagamvalor) from pagamento p join favorecido f on f.favorecidoid = p.favorecidoid group by f.favorecidonome order by sum(p.pagamvalor) desc;");
 			while ( rs.next() ) {
 				String  nome = rs.getString("favorecidonome");
 				float valorPagam = rs.getFloat("sum");	            
