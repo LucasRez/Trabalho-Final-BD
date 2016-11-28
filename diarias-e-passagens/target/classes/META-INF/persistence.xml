@@ -4,11 +4,23 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
 	http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-	<persistence-unit name="imdb" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="TrabFinalBD" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+<!-- 		<class>br.unb.cic.DiariasEPassagens.entidades.Acao</class> -->
+<!-- 		<class>br.unb.cic.DiariasEPassagens.entidades.Favorecido</class> -->
+<!-- 		<class>br.unb.cic.DiariasEPassagens.entidades.Funcao</class> -->
+<!-- 		<class>br.unb.cic.DiariasEPassagens.entidades.OrgaoSubordinado</class> -->
+<!-- 		<class>br.unb.cic.DiariasEPassagens.entidades.OrgaoSuperior</class> -->
+<!-- 		<class>br.unb.cic.DiariasEPassagens.entidades.Pagamento</class> -->
+<!-- 		<class>br.unb.cic.DiariasEPassagens.entidades.Programa</class> -->
+<!-- 		<class>br.unb.cic.DiariasEPassagens.entidades.SubFuncao</class> -->
+<!-- 		<class>br.unb.cic.DiariasEPassagens.entidades.UnidadeGestora</class> -->
+
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>		
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/imdb"></property>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/TrabFinalBD"/>
 			<property name="javax.persistence.jdbc.user" value="postgres" />
 			<property name="javax.persistence.jdbc.password" value="postgres" />							
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
