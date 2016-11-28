@@ -1,6 +1,8 @@
 ﻿
 --Queries
 
+--query que retorna o total gasto
+select sum(p.pagamvalor) from pagamento p;
 --query que retorna os gastos de forma decrescente
 select f.favorecidonome, sum(p.pagamvalor) from pagamento p join favorecido f on f.favorecidoid = p.favorecidoid group by f.favorecidonome order by sum(p.pagamvalor) desc;
 --query que retorna os gastos de forma crescente

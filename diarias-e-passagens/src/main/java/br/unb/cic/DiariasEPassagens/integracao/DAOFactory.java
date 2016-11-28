@@ -31,4 +31,5 @@ public abstract class DAOFactory {
 	public abstract DAOOrgaoSubordinado createDAOOrgaoSubordinado();
 	public abstract DAOOrgaoSuperior createDAOOrgaoSuperior();
 	public abstract DAOPrograma  createDAOPrograma();
+	public abstract DAOQuery createDAOQuery();
 }
