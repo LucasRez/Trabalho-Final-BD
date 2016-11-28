@@ -1,6 +1,6 @@
 package br.unb.cic.DiariasEPassagens.entidades;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -28,20 +28,20 @@ public class Favorecido {
 	private UnidadeGestora uniGest;
 	
 	@OneToMany(mappedBy="favorecido")
-	private ArrayList<Pagamento> pagamentos;
+	private List<Pagamento> pagamentos;
 
-	public Favorecido(String nome, String cpf, UnidadeGestora uniGest, ArrayList<Pagamento> pagamentos) {
+	public Favorecido(String nome, String cpf, UnidadeGestora uniGest, List<Pagamento> pagamentos) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.uniGest = uniGest;
 		this.pagamentos = pagamentos;
 	}
 
-	public ArrayList<Pagamento> getPagamentos() {
+	public List<Pagamento> getPagamentos() {
 		return pagamentos;
 	}
 
-	public void setPagamentos(ArrayList<Pagamento> pagamentos) {
+	public void setPagamentos(List<Pagamento> pagamentos) {
 		this.pagamentos = pagamentos;
 	}
 

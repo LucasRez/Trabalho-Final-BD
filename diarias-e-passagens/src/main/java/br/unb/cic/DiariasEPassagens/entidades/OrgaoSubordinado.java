@@ -1,6 +1,6 @@
 package br.unb.cic.DiariasEPassagens.entidades;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -22,9 +22,9 @@ public class OrgaoSubordinado {
 	private OrgaoSuperior orgSup;
 	
 	@OneToMany(mappedBy="orgSub")
-	private ArrayList<UnidadeGestora> uniGests;
+	private List<UnidadeGestora> uniGests;
 
-	public OrgaoSubordinado(int id, String nome, OrgaoSuperior orgSup, ArrayList<UnidadeGestora> uniGests) {
+	public OrgaoSubordinado(int id, String nome, OrgaoSuperior orgSup, List<UnidadeGestora> uniGests) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -32,11 +32,11 @@ public class OrgaoSubordinado {
 		this.uniGests = uniGests;
 	}
 
-	public ArrayList<UnidadeGestora> getUniGests() {
+	public List<UnidadeGestora> getUniGests() {
 		return uniGests;
 	}
 
-	public void setUniGests(ArrayList<UnidadeGestora> uniGests) {
+	public void setUniGests(List<UnidadeGestora> uniGests) {
 		this.uniGests = uniGests;
 	}
 

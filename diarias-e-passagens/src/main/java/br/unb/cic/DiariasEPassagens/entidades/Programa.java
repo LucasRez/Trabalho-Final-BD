@@ -1,6 +1,6 @@
 package br.unb.cic.DiariasEPassagens.entidades;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -16,19 +16,19 @@ public class Programa {
 	private String nome;
 	
 	@OneToMany(mappedBy="programa")
-	private ArrayList<Acao> acoes;
+	private List<Acao> acoes;
 	
-	public Programa(int id, String nome, ArrayList<Acao> acoes) {
+	public Programa(int id, String nome, List<Acao> acoes) {
 		this.id = id;
 		this.nome = nome;
 		this.acoes = acoes;
 	}
 
-	public ArrayList<Acao> getAcoes() {
+	public List<Acao> getAcoes() {
 		return acoes;
 	}
 
-	public void setAcoes(ArrayList<Acao> acoes) {
+	public void setAcoes(List<Acao> acoes) {
 		this.acoes = acoes;
 	}
 

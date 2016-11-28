@@ -1,6 +1,6 @@
 package br.unb.cic.DiariasEPassagens.entidades;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -26,9 +26,9 @@ public class Acao {
 	private Programa programa;
 
 	@OneToMany(mappedBy="acao")
-	private ArrayList<Pagamento> pagamentos;
+	private List<Pagamento> pagamentos;
 	
-	public Acao(String id, String nome, String linguagemCidada, Programa programa, ArrayList<Pagamento> pagamentos) {
+	public Acao(String id, String nome, String linguagemCidada, Programa programa, List<Pagamento> pagamentos) {
 		this.id = id;
 		this.nome = nome;
 		this.linguagemCidada = linguagemCidada;
@@ -44,11 +44,11 @@ public class Acao {
 		this.id = id;
 	}
 
-	public ArrayList<Pagamento> getPagamentos() {
+	public List<Pagamento> getPagamentos() {
 		return pagamentos;
 	}
 
-	public void setPagamentos(ArrayList<Pagamento> pagamentos) {
+	public void setPagamentos(List<Pagamento> pagamentos) {
 		this.pagamentos = pagamentos;
 	}
 
