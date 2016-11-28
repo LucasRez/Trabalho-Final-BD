@@ -8,6 +8,7 @@ import br.unb.cic.DiariasEPassagens.integracao.DAOOrgaoSubordinado;
 import br.unb.cic.DiariasEPassagens.integracao.DAOOrgaoSuperior;
 import br.unb.cic.DiariasEPassagens.integracao.DAOPagamento;
 import br.unb.cic.DiariasEPassagens.integracao.DAOPrograma;
+import br.unb.cic.DiariasEPassagens.integracao.DAOQuery;
 import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
 
@@ -57,6 +58,11 @@ public class DAOFactoryImpl extends DAOFactory {
 	@Override
 	public DAOPrograma createDAOPrograma() {
 		return new DAOProgramaJPA();
+	}
+
+	@Override
+	public DAOQuery createDAOQuery() {
+		return new DAOQueryJPA();
 	}
 	
 }

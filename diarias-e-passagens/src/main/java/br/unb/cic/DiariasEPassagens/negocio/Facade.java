@@ -20,11 +20,14 @@ import br.unb.cic.DiariasEPassagens.integracao.DAOOrgaoSubordinado;
 import br.unb.cic.DiariasEPassagens.integracao.DAOOrgaoSuperior;
 import br.unb.cic.DiariasEPassagens.integracao.DAOPagamento;
 import br.unb.cic.DiariasEPassagens.integracao.DAOPrograma;
+import br.unb.cic.DiariasEPassagens.integracao.DAOQuery;
 import br.unb.cic.DiariasEPassagens.integracao.DAOSubFuncao;
 import br.unb.cic.DiariasEPassagens.integracao.DAOUnidadeGestora;
+import br.unb.cic.DiariasEPassagens.integracao.jpa.DAOQueryJPA;
 
 public class Facade {
 
+	private DAOQuery daoQuery;
 	private DAOAcao daoAcao;
 	private DAOFavorecido daoFavorecido;
 	private DAOFuncao daoFuncao;
@@ -36,6 +39,7 @@ public class Facade {
 	private DAOUnidadeGestora daoUnidadeGestora;
 	
 	public Facade() {
+		daoQuery = DAOFactory.instance(DataBase.SQLDB).createDAOQuery();
 		daoAcao = DAOFactory.instance(DataBase.SQLDB).createDAOAcao();
 		daoFavorecido = DAOFactory.instance(DataBase.SQLDB).createDAOFavorecido();
 		daoFuncao = DAOFactory.instance(DataBase.SQLDB).createDAOFuncao();
@@ -45,6 +49,50 @@ public class Facade {
 		daoPrograma = DAOFactory.instance(DataBase.SQLDB).createDAOPrograma();
 		daoSubFuncao = DAOFactory.instance(DataBase.SQLDB).createDAOSubFuncao();
 		daoUnidadeGestora = DAOFactory.instance(DataBase.SQLDB).createDAOUnidadeGestora();
+	}
+	
+	public void recuperaQualServidorGastouMais() {
+		daoQuery.recuperaQualServidorGastouMais();
+	}
+	
+	public void recuperaListaGastoTotaisDecres() {
+		daoQuery.recuperaListaGastoTotaisCresc();
+	}
+	
+	public void recuperaListaGastoTotaisCresc() {
+		daoQuery.recuperaListaGastoTotaisDecres();
+	}
+	
+	public void recuperaQualOrgSupGastouMais() {
+		daoQuery.recuperaQualOrgSupGastouMais();
+	}
+	
+	public void recuperaQualAcaoGastouMais() {
+		daoQuery.recuperaQualAcaoGastouMais();
+	}
+	
+	public void recuperaQualProgramaGastouMais() {
+		daoQuery.recuperaQualProgramaGastouMais();
+	}
+	
+	public void recuperaGastoPorCpf(String CPF) {
+		daoQuery.recuperaGastoPorCpf(CPF);
+	}
+	
+	public void recuperaGastoPorNome(String nome) {
+		daoQuery.recuperaGastoPorNome(nome);
+	}
+	
+	public void recuperaCodPagamGastouMais() {
+		daoQuery.recuperaCodPagamGastouMais();
+	}
+	
+	public void recuperaGastoTotal() {
+		daoQuery.recuperaGastoTotal();
+	}
+	
+	public void recuperaProgramadeAcaoGastouMais(String acaoNome) {
+		daoQuery.recuperaProgramadeAcaoGastouMais(acaoNome);
 	}
 	
 	public List<Acao> recuperaTodasAcoes() {

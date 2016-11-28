@@ -18,7 +18,7 @@ public class DAOQueryJPA implements DAOQuery{
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
 					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
-							"postgresql", "02101995");
+							"postgres", "postgres");
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
@@ -43,32 +43,155 @@ public class DAOQueryJPA implements DAOQuery{
 
 	@Override
 	public void recuperaListaGastoTotaisDecres() {
-		// TODO Auto-generated method stub
+		Connection c = null;
+		Statement stmt = null;
+		try {
+			Class.forName("org.postgresql.Driver");
+			c = DriverManager
+					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+							"postgres", "postgres");
+			c.setAutoCommit(false);
 
+			stmt =  c.createStatement();
+			ResultSet rs = stmt.executeQuery("select f.favorecidonome, sum(p.pagamvalor) from pagamento p"
+					+ "join favorecido f on f.favorecidoid = p.favorecidoid group by f.favorecidonome order by sum(p.pagamvalor)"
+					+ "desc;");
+			while ( rs.next() ) {
+				String  nome = rs.getString("favorecidonome");
+				float valorPagam = rs.getFloat("sum");	            
+				System.out.println( "Nome do favorecido: " + nome  + "Total Gasto: " + valorPagam);
+
+			}
+			rs.close();
+			stmt.close();
+			c.close();
+		} catch ( Exception e ) {
+			System.err.println( e.getClass().getName()+": "+ e.getMessage() );
+			System.exit(0);
+		}
 	}
 
 	@Override
 	public void recuperaListaGastoTotaisCresc() {
-		// TODO Auto-generated method stub
+		Connection c = null;
+		Statement stmt = null;
+		try {
+			Class.forName("org.postgresql.Driver");
+			c = DriverManager
+					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+							"postgres", "postgres");
+			c.setAutoCommit(false);
 
+			stmt =  c.createStatement();
+			ResultSet rs = stmt.executeQuery("select f.favorecidonome, sum(p.pagamvalor) from pagamento p "
+					+ "join favorecido f on f.favorecidoid = p.favorecidoid group by f.favorecidonome order by sum(p.pagamvalor)"
+					+ " asc;");
+			while ( rs.next() ) {
+				String  nome = rs.getString("favorecidonome");
+				float valorPagam = rs.getFloat("sum");	            
+				System.out.println( "Nome do favorecido: " + nome  + "Total Gasto: " + valorPagam);
+
+			}
+			rs.close();
+			stmt.close();
+			c.close();
+		} catch ( Exception e ) {
+			System.err.println( e.getClass().getName()+": "+ e.getMessage() );
+			System.exit(0);
+		}
 	}
 
 	@Override
 	public void recuperaQualOrgSupGastouMais() {
-		// TODO Auto-generated method stub
+		Connection c = null;
+		Statement stmt = null;
+		try {
+			Class.forName("org.postgresql.Driver");
+			c = DriverManager
+					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+							"postgres", "postgres");
+			c.setAutoCommit(false);
 
+			stmt =  c.createStatement();
+			ResultSet rs = stmt.executeQuery("select osup.orgsupnome, sum(p.pagamvalor) from orgao_superior osup"
+					+ " join orgao_subordinado osub on osup.orgsupcod = osub.orgsupcod "
+					+ " join unidade_gestora u on u.orgsubcod = osub.orgsubcod"
+					+ " join favorecido f on f.unigestcod = u.unigestcod join pagamento p on f.favorecidoid = p.favorecidoid group by osup.orgsupnome order by sum(p.pagamvalor) "
+					+ " desc limit 1;");
+			while ( rs.next() ) {
+				String  nome = rs.getString("orgsupnome");
+				float valor = rs.getFloat("sum");	            
+				System.out.println( "Nome do Orgão que mais gastou: " + nome + " Total gasto: " + valor);
+
+			}
+			rs.close();
+			stmt.close();
+			c.close();
+		} catch ( Exception e ) {
+			System.err.println( e.getClass().getName()+": "+ e.getMessage() );
+			System.exit(0);
+		}
 	}
 
 	@Override
 	public void recuperaQualAcaoGastouMais() {
-		// TODO Auto-generated method stub
+		Connection c = null;
+		Statement stmt = null;
+		try {
+			Class.forName("org.postgresql.Driver");
+			c = DriverManager
+					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+							"postgres", "postgres");
+			c.setAutoCommit(false);
 
+			stmt =  c.createStatement();
+			ResultSet rs = stmt.executeQuery("select a.acaonome, sum(p.pagamvalor) from pagamento p"
+					+ " join acao a on p.acaocod = a.acaocod group by a.acaonome order by sum(p.pagamvalor)"
+					+ " desc limit 1;");
+			while ( rs.next() ) {
+				String  nome = rs.getString("acaonome");
+				float valor = rs.getFloat("sum");	            
+				System.out.println( "Nome da ação que gastou mais: " + nome + " Total gasto: " + valor);
+
+			}
+			rs.close();
+			stmt.close();
+			c.close();
+		} catch ( Exception e ) {
+			System.err.println( e.getClass().getName()+": "+ e.getMessage() );
+			System.exit(0);
+		}
 	}
 
 	@Override
 	public void recuperaQualProgramaGastouMais() {
 		// TODO Auto-generated method stub
+		Connection c = null;
+		Statement stmt = null;
+		try {
+			Class.forName("org.postgresql.Driver");
+			c = DriverManager
+					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
+							"postgres", "postgres");
+			c.setAutoCommit(false);
 
+			stmt =  c.createStatement();
+			ResultSet rs = stmt.executeQuery("select pr.prognome, sum(p.pagamvalor) from pagamento p join acao a on p.acaocod = a.acaocod"
+					+ " join programa pr on a.progcod = pr.progcod group by pr.prognome order by sum(p.pagamvalor)"
+					+ " desc limit 1;");
+			while ( rs.next() ) {
+				String  nome = rs.getString("prognome");
+				float valor = rs.getFloat("sum");	            
+				System.out.println( "Nome do favorecido: " + nome  + "Total Gasto: " + valor);
+
+			}
+			rs.close();
+			stmt.close();
+			c.close();
+		} catch ( Exception e ) {
+			System.err.println( e.getClass().getName()+": "+ e.getMessage() );
+			System.exit(0);
+		}
 	}
 
 	@Override
@@ -79,7 +202,7 @@ public class DAOQueryJPA implements DAOQuery{
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
 					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
-							"postgresql", "02101995");
+							"postgres", "postgres");
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
@@ -107,7 +230,7 @@ public class DAOQueryJPA implements DAOQuery{
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
 					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
-							"postgresql", "02101995");
+							"postgres", "postgres");
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
@@ -135,7 +258,7 @@ public class DAOQueryJPA implements DAOQuery{
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
 					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
-							"postgresql", "02101995");
+							"postgres", "postgres");
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
@@ -164,7 +287,7 @@ public class DAOQueryJPA implements DAOQuery{
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
 					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
-							"postgresql", "02101995");
+							"postgres", "postgres");
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
@@ -192,7 +315,7 @@ public class DAOQueryJPA implements DAOQuery{
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager
 					.getConnection("jdbc:postgresql://localhost:5432/DiariasePassagens",
-							"postgresql", "02101995");
+							"postgres", "postgres");
 			c.setAutoCommit(false);
 
 			stmt =  c.createStatement();
